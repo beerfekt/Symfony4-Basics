@@ -23,7 +23,9 @@ Installing Homestead
     git clone https://github.com/laravel/homestead.git ~/Homestead
     cd ~/Homestead
 // Clone the desired release...  
+
     git checkout v7.18.0  
 
-// Mac / Linux...
+// Mac / Linux...  
+
     bash init.sh
