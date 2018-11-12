@@ -418,3 +418,7 @@ aaf00a,192.168.10.1,GET,http://symfony-tutorial.test/css/bootstrap.min.css.map,1
 980fb0,192.168.10.1,GET,http://symfony-tutorial.test/js/bootstrap.min.js.map,1542030239,,404
 db7700,192.168.10.1,GET,http://symfony-tutorial.test/css/bootstrap.min.css.map,1542030239,,404
 94e02d,192.168.10.1,GET,http://symfony-tutorial.test/contact,1542030246,,200
+ec289f,192.168.10.1,GET,http://symfony-tutorial.test/,1542042487,,200
+4fceec,192.168.10.1,GET,http://symfony-tutorial.test/hello,1542042492,,200
+89ebf2,192.168.10.1,GET,http://symfony-tutorial.test/persons,1542042496,,200
+24215e,192.168.10.1,GET,http://symfony-tutorial.test/contact,1542042500,,200

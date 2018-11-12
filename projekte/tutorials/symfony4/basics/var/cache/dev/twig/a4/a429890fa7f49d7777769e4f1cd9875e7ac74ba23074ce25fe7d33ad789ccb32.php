@@ -49,12 +49,7 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
         // line 13
         $this->displayBlock('stylesheets', $context, $blocks);
         // line 22
-        echo "            ";
-        // line 25
         echo "
-
-
-
 </head>
 
 
@@ -63,7 +58,7 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
         <nav class=\"navbar navbar-expand-sm navbar-dark bg-dark\">
             <div class=\"container\">
                 ";
-        // line 37
+        // line 31
         echo "                <a class=\"navbar-brand\" href=\"";
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("welcome");
         echo "\">Home</a>
@@ -73,20 +68,20 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
 
                         <li class=\"nav-item\">
                             ";
-        // line 44
+        // line 38
         echo "                            <a class=\"nav-link\" href=\"";
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("hello_page");
         echo "\"  >Hello Page</a>
                         </li>
                         <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"";
-        // line 47
+        // line 41
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("persons");
         echo "\"  >Persons</a>
                         </li>                             
                         <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"";
-        // line 50
+        // line 44
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
         echo "\"  >Contact</a>
                         </li>        
@@ -99,22 +94,22 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
 
     <main role=\"main\" class=\"container main\">
         ";
-        // line 61
+        // line 55
         echo "        ";
-        $this->loadTemplate("flash_messages.html.twig", "base.html.twig", 61)->display($context);
+        $this->loadTemplate("flash_messages.html.twig", "base.html.twig", 55)->display($context);
         echo " 
         ";
-        // line 63
+        // line 57
         echo "        ";
         $this->displayBlock('body', $context, $blocks);
-        // line 64
+        // line 58
         echo "    </main>
 
     ";
-        // line 67
+        // line 61
         echo "    ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 76
+        // line 70
         echo "
 </body>
 </html>";
@@ -176,7 +171,7 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
 
     }
 
-    // line 63
+    // line 57
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -193,7 +188,7 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
 
     }
 
-    // line 67
+    // line 61
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -202,19 +197,19 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 68
+        // line 62
         echo "                ";
-        // line 69
+        // line 63
         echo "    <script src=";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jquery-3.3.1.slim.min.js"), "html", null, true);
         echo " type=\"text/javascript\" ></script>
         ";
-        // line 71
+        // line 65
         echo "        <script src=";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
         echo " type=\"text/javascript\" ></script>
         ";
-        // line 73
+        // line 67
         echo "        <script src=";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jquery-test.js"), "html", null, true);
         echo " type=\"text/javascript\" ></script>  
@@ -240,7 +235,7 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
 
     public function getDebugInfo()
     {
-        return array (  218 => 73,  213 => 71,  208 => 69,  206 => 68,  197 => 67,  180 => 63,  167 => 20,  161 => 16,  157 => 14,  148 => 13,  130 => 10,  118 => 76,  115 => 67,  111 => 64,  108 => 63,  103 => 61,  90 => 50,  84 => 47,  77 => 44,  67 => 37,  54 => 25,  52 => 22,  50 => 13,  46 => 11,  44 => 10,  33 => 1,);
+        return array (  213 => 67,  208 => 65,  203 => 63,  201 => 62,  192 => 61,  175 => 57,  162 => 20,  156 => 16,  152 => 14,  143 => 13,  125 => 10,  113 => 70,  110 => 61,  106 => 58,  103 => 57,  98 => 55,  85 => 44,  79 => 41,  72 => 38,  62 => 31,  52 => 22,  50 => 13,  46 => 11,  44 => 10,  33 => 1,);
     }
 
     public function getSourceContext()
@@ -266,12 +261,6 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
      {# asset() hilfsfunktion - sucht nach datei und fügt diese ein#}
               href={{ asset('css/custom-styles.css') }} >
     {% endblock %}
-            {# TODO : über twig einfügen 
-        <script src={{ asset ('/bower_components/jquery/dist/jquery.min.js') }} type=\"text/javascript\" ></script>
-#}
-
-
-
 
 </head>
 
