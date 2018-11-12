@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>
+       Symfony 4 - {% block title %}Let's Explore Symfony 4{% endblock %}
+    </title>
+    <!-- Bootstrap -->
+    {% block stylesheets %}
+        <!-- core CSS -->
+        <!-- Bootstrap core  -->
+        <link rel="stylesheet" href={{ asset ('css/bootstrap.min.css') }}>
+        <!-- eigenes CSS -->
+        <link rel="stylesheet"
+     {# asset() hilfsfunktion - sucht nach datei und fügt diese ein#}
+              href={{ asset('css/custom-styles.css') }} >
+    {% endblock %}
+
+</head>
+
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container">
+                {# path() -> name des controllers (hier welcome) #}
+                <a class="navbar-brand" href="{{ path('welcome') }}">Home</a>
+
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto">
+
+                        <li class="nav-item">
+                            {# href="/hello" entspricht: {{path('hello_page')}}   #}
+                            <a class="nav-link" href="{{path('hello_page')}}"  >Hello Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{path('persons')}}"  >Persons</a>
+                        </li>                             
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{path('contact')}}"  >Contact</a>
+                        </li>        
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" class="container main">
+        {# insert flash-message template #}
+        {% include 'flash_messages.html.twig' %} 
+        {# insert content templates #}
+        {% block body %}{% endblock %}
+    </main>
+
+    {#insert js files#}
+    {% block javascripts %}
+                {# TODO : über twig einfügen #}
+    <script src={{ asset ('js/jquery-3.3.1.slim.min.js') }} type="text/javascript" ></script>
+        {# Bootstrap Latest compiled and minified JavaScript #}
+        <script src={{ asset ('js/bootstrap.min.js') }} type="text/javascript" ></script>
+        {# JQuery #}
+        <script src={{ asset ('js/jquery-test.js') }} type="text/javascript" ></script>  
+
+    {% endblock %}
+
+</body>
+</html>

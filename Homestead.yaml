@@ -1,0 +1,62 @@
+---
+ip: "192.168.10.10"
+memory: 2048
+cpus: 1
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+#mapping von lokal: home/beer/code auf vagrant 
+folders:
+#    - map: ./projekte               #localmachine  
+#      to: /home/vagrant/projekte        #vagrantbox (via vagrant ssh) : /vagrant/
+
+    - map: ./projekte/homestead             #localmachine  
+      to: /home/vagrant/projekte/homestead       #vagrantbox
+
+    - map: ./projekte/tutorials/symfony4            
+      to: /home/vagrant/projekte/tutorials/symfony4        
+
+    - map: ./projekte/tutorials/angular             
+      to: /home/vagrant/projekte/tutorials/angular       
+
+#mapping von lokal homestead.test auf vagrant /home/vagrant/code/public... (siehe lokal etc/hosts)
+sites:
+
+    - map: homestead.info
+      to:  /home/vagrant/projekte/homestead/public
+
+    - map: symfony-tutorial.test
+      to:  /home/vagrant/projekte/tutorials/symfony4/basics/public
+      type: symfony4
+
+    - map: angular-tutorial.test
+      to:  /home/vagrant/projekte/tutorials/angular/public
+
+databases:
+    - homestead
+
+
+#    Once configured, Homestead will export your databases to mysql_backup and  postgres_backup directories when the vagrant destroy command is executed. These directories can be found in the folder where you cloned Homestead or in the root of your project if you are using the per project installation method.
+backup: true
+# ports:
+#     - send: 50000
+#       to: 5000
+#     - send: 7777
+#       to: 777
+#       protocol: udp
+
+# blackfire:
+#     - id: foo
+#       token: bar
+#       client-id: foo
+#       client-token: bar
+
+# zray:
+#  If you've already freely registered Z-Ray, you can place the token here.
+#     - email: foo@bar.com
+#       token: foo
+#  Don't forget to ensure that you have 'zray: "true"' for your site.

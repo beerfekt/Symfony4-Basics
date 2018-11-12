@@ -1,0 +1,32 @@
+
+{# base.html ist übergeordnetes template #}
+{% extends 'base.html.twig' %}
+
+{# Title wird je Seite überschrieben #}
+{% block title %}Hello{% endblock title %}
+
+{# body definition ist  teil von base.html.twig, erbt sozusagen #}
+{# body definition wird in ....#}
+{% block body %}
+        <div>
+            <h1>Hello Symfony 4</h1>
+            <p class="lead"> Testseite aus Tutorial: 
+				https://www.youtube.com/watch?v=sT4dMKSA1-A
+            </p>
+        </div>     
+
+        {# wenn kein somekey aus controller dann default #}
+        <ul>            
+            <li>
+                {{ somekey | default('NO value received - lets take  a lovely default value') }}
+            </li>
+
+            <li>
+                {{ someotherkey | default('NO value received - lets take  a  another lovely default value') }}
+            </li>
+        </ul>
+        {# alle eingehenden Werte auslesen#}
+        {#
+            {{ dump() }}
+        #}
+{% endblock %}
