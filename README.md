@@ -3,14 +3,15 @@
   
 
 Symfony4 - Basics nach dem Tutorial:    
-Getting started with Symfony4 <https://codereviewvideos.com/course/symfony-4-beginners-tutorial/video/getting-started-with-symfony-4>  
+Getting started with Symfony4  
+<https://codereviewvideos.com/course/symfony-4-beginners-tutorial/video/getting-started-with-symfony-4>  
 
 
 ## SET UP THE PROJECT (Tested with Ubuntu(Linux))
   
 1. Clone the Repo: 
   
-    git clone 
+    git clone https://github.com/beerfekt/homestead_test.git
  
 2. Go into the cloned-folder:
    
@@ -33,10 +34,9 @@ Vagrant-Box: Laravel/Homestead:
 <https://laravel.com/docs/5.7/homestead#installation-and-setup>  
 
 
-## Homestead - Vagrant Box:    
+## Symfony:  
 
-Installing The Homestead Vagrant Box  
-    vagrant box add laravel/homestead
-
+Symfony4 - PHP Framework:  
+<https://symfony.com/>
 
 
