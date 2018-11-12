@@ -1,32 +1,22 @@
 #!/bin/bash
 
-#mkdir test
-#cd test
-
-#touch test.md
-
-
-
-#echo "testscript"
-#mkdir test
-#echo "bin im test"
-#ls
-#echo "cu"
+echo ""
+echo ""
 
 echo " ####### Installing The Homestead Vagrant Box ###### "
 echo ""
 echo "Removing old laravel/homestead boxes:"
 echo ""
 
-vagrant box remove laravel/homestead --all
+#EINKOMMENTIEREN FALLS KEINE BOX VORHANDEN
+#vagrant box remove laravel/homestead --all
 echo "DONE"
 echo ""
 echo "Installing The Homestead Vagrant Box..."
 echo ""
-
-vagrant box add laravel/homestead
+#EINKOMMENTIEREN FALLS KEINE BOX VORHANDEN
+#vagrant box add laravel/homestead
 echo "updating vagrant laravel/homestead - box ..."
-vagrant box update
 echo "DONE"
 
 
@@ -42,9 +32,6 @@ echo "Clone the desired release.."
 git checkout v7.18.0
 echo "DONE"
 
-#echo "Creating Homestead.yml ..."
-#bash init.sh
-
 echo "moving Homestead.yaml into Homestead Folder..."
 mv ../Homestead.yaml Homestead.yaml
 echo "moving projekte into Homestead Folder..."
@@ -54,6 +41,7 @@ echo "DONE"
 echo ""
 
 echo "starting Vagrant box: "
+vagrant box update
 vagrant up
 echo "DONE"
 
@@ -68,10 +56,6 @@ sudo -- sh -c -e "echo '192.168.10.10 homestead.info' >> /etc/hosts"
 echo "DONE"
 
 echo ""
-
-#echo "192.168.10.10 symfony-tutorial.test" >> /etc/hosts
-#echo -i "192.168.10.10 angular-tutorial.test" >> /etc/hosts
-#echo -i "192.168.10.10 homestead.info" >> /etc/hosts
 
 echo "Your Page is available at this address: "
 echo "  PHP Infos:                ----> homestead.info "
