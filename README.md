@@ -8,6 +8,8 @@ Getting started with Symfony4
 
 
 ## SET UP THE PROJECT (Tested with Ubuntu(Linux))
+
+0. Make sure that no laravel/homestead box / machine is there or running
   
 1. Clone the Repo: 
   
@@ -26,6 +28,7 @@ Getting started with Symfony4
   
     ./setup.sh
 
+5. Add email-config into the .env (projekt-name/.env)
 
 
 ## Entwicklungsumgebung:        
