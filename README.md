@@ -40,15 +40,29 @@ Getting started with Symfony4
 6. Add the .env file into the project
 
 7. Add email-config into the .env (projekt-name/.env)
-   (for sending emails from the form)
+   (for sending emails from the form)  
+   
+ 
+#### information ####
 
-## Entwicklungsumgebung:        
+8. Have a break in the development:
+  
+    //root of homestead:
+  
+    //stop box
+    vagrant halt
+    
+    //continue developing
+    vagrant up  
+    
+
+### Entwicklungsumgebung:        
 
 Vagrant-Box: Laravel/Homestead:  
 <https://laravel.com/docs/5.7/homestead#installation-and-setup>  
 
 
-## Symfony:  
+### Symfony:  
 
 Symfony4 - PHP Framework:  
 <https://symfony.com/>
