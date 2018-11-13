@@ -56,6 +56,13 @@ Getting started with Symfony4
     //continue developing  
     vagrant up  
     
+    
+    
+9. After destroying vagrant box:  
+  
+  //remove entries from the /etc/hosts file!  
+  homestead.info
+  symfony-tutorial.test
 
 ### Entwicklungsumgebung:        
 
