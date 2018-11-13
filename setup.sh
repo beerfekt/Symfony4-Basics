@@ -36,6 +36,8 @@ echo "moving Homestead.yaml into Homestead Folder..."
 mv ../Homestead.yaml Homestead.yaml
 echo "moving projekte into Homestead Folder..."
 mv ../projekte projekte
+echo "moving custom.sh (custom commands in the vagrant-box)..."
+mv ../user-customizations.sh .
 echo "DONE"
 
 
@@ -53,10 +55,7 @@ echo ""
 echo "starting Vagrant box: "
 vagrant box update
 vagrant up
-echo "go into box:"
-vagrant ssh && cd /home/vagrant/projekte/tutorials/symfony4/basics/public
-&& echo "install bootstrap via bower:" && bower install bootstrap
-echo "DONE"
+
 
 echo ""
 echo ""
