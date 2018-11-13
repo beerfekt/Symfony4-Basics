@@ -24,12 +24,23 @@ Getting started with Symfony4
 
     chmod +x setup.sh
 
-4. Run the script:  
+4.1 Check if laravel/homestead box is already installed:  
+  
+  vagrant box list
+
+4.2 If it's not installed, open setup.sh and uncomment in the line:  
+  
+  vagrant box add laravel/homestead
+
+
+5. Run the script:  
   
     ./setup.sh
 
-5. Add email-config into the .env (projekt-name/.env)
+6. Add the .env file into the project
 
+7. Add email-config into the .env (projekt-name/.env)
+   (for sending emails from the form)
 
 ## Entwicklungsumgebung:        
 
