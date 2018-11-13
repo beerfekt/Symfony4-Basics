@@ -38,22 +38,32 @@ echo "moving projekte into Homestead Folder..."
 mv ../projekte projekte
 echo "DONE"
 
-echo ""
-
-echo "starting Vagrant box: "
-vagrant box update
-vagrant up
-echo "DONE"
-
-echo ""
-echo ""
 
 #testen
 echo "host einträge setzen ... "
-sudo -- sh -c -e "echo '192.168.10.10 symfony-tutorial.test' >> /etc/hosts"
-sudo -- sh -c -e "echo '192.168.10.10 angular-tutorial.test' >> /etc/hosts"
-sudo -- sh -c -e "echo '192.168.10.10 homestead.info' >> /etc/hosts"
+sudo sed -i "2i192.168.10.10 symfony-tutorial.test" /etc/hosts
+sudo sed -i "2i192.168.10.10 homestead.info" /etc/hosts
+#echo "host einträge setzen ... "
+#sudo -- sh -c -e "echo '192.168.10.10 symfony-tutorial.test' >> /etc/hosts"
+#sudo -- sh -c -e "echo '192.168.10.10 angular-tutorial.test' >> /etc/hosts"
+#sudo -- sh -c -e "echo '192.168.10.10 homestead.info' >> /etc/hosts"
 echo "DONE"
+
+echo ""
+echo "starting Vagrant box: "
+vagrant box update
+vagrant up
+echo "go into box:"
+vagrant ssh
+cd /home/vagrant/projekte/tutorials/symfony4/basics/public
+echo "install bootstrap via bower:"
+bower install bootstrap
+echo "DONE"
+
+echo ""
+echo ""
+
+
 
 echo ""
 
