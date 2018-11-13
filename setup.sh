@@ -54,10 +54,8 @@ echo "starting Vagrant box: "
 vagrant box update
 vagrant up
 echo "go into box:"
-vagrant ssh
-cd /home/vagrant/projekte/tutorials/symfony4/basics/public
-echo "install bootstrap via bower:"
-bower install bootstrap
+vagrant ssh && cd /home/vagrant/projekte/tutorials/symfony4/basics/public
+&& echo "install bootstrap via bower:" && bower install bootstrap
 echo "DONE"
 
 echo ""
