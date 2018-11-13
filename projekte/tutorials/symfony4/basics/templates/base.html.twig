@@ -13,7 +13,7 @@
     {% block stylesheets %}
         <!-- core CSS -->
         <!-- Bootstrap core  -->
-        <link rel="stylesheet" href={{ asset ('css/bootstrap.min.css') }}>
+        <link rel="stylesheet" href={{ asset ('node_modules/bootstrap/dist/css/bootstrap.min.css') }}>
         <!-- eigenes CSS -->
         <link rel="stylesheet"
      {# asset() hilfsfunktion - sucht nach datei und fügt diese ein#}
@@ -59,14 +59,15 @@
 
     {#insert js files#}
     {% block javascripts %}
-                {# TODO : über twig einfügen #}
-    <script src={{ asset ('js/jquery-3.3.1.slim.min.js') }} type="text/javascript" ></script>
+        {# TODO : JQuery  über npm package einfügen #}
+        <script src={{ asset ('js/jquery-3.3.1.slim.min.js') }} type="text/javascript" ></script> 
+        
         {# Bootstrap Latest compiled and minified JavaScript #}
-        <script src={{ asset ('js/bootstrap.min.js') }} type="text/javascript" ></script>
-        {# JQuery #}
+        <script src={{ asset ('node_modules/bootstrap/dist/js/bootstrap.min.js') }} type="text/javascript" ></script>
+        {# JQuery test #}
         <script src={{ asset ('js/jquery-test.js') }} type="text/javascript" ></script>  
 
     {% endblock %}
 
-</body>
+ </body>
 </html>
