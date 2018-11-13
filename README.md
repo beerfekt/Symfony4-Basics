@@ -47,12 +47,13 @@ Getting started with Symfony4
 
 8. Have a break in the development:
   
-    //root of homestead:
+    //root of homestead:  
+    
   
-    //stop box
+    //stop box  
     vagrant halt
     
-    //continue developing
+    //continue developing  
     vagrant up  
     
 
