@@ -20,11 +20,12 @@ class srcDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
         $this->defaultLocale = $defaultLocale;
         if (null === self::$declaredRoutes) {
             self::$declaredRoutes = array(
+        'articles' => array(array(), array('_controller' => 'App\\Controller\\ArticleController::index'), array(), array(array('text', '/articles')), array(), array()),
         'contactbasic' => array(array(), array('_controller' => 'App\\Controller\\ContactController::contactBasic'), array(), array(array('text', '/contact/basic')), array(), array()),
         'contact' => array(array(), array('_controller' => 'App\\Controller\\ContactController::contactValidation'), array(), array(array('text', '/contact')), array(), array()),
-        'welcome' => array(array(), array('_controller' => 'App\\Controller\\WelcomeController::index'), array(), array(array('text', '/')), array(), array()),
-        'hello_page' => array(array(), array('_controller' => 'App\\Controller\\WelcomeController::hello'), array(), array(array('text', '/hello')), array(), array()),
-        'persons' => array(array('name'), array('name' => 'testbert', '_controller' => 'App\\Controller\\WelcomeController::persons'), array('name' => '[A-Za-z]+'), array(array('variable', '/', '[A-Za-z]+', 'name'), array('text', '/persons')), array(), array()),
+        'welcome' => array(array(), array('_controller' => 'App\\Controller\\ValueController::index'), array(), array(array('text', '/')), array(), array()),
+        'values' => array(array(), array('_controller' => 'App\\Controller\\ValueController::values'), array(), array(array('text', '/values')), array(), array()),
+        'persons' => array(array('name'), array('name' => 'default value - testbert', '_controller' => 'App\\Controller\\ValueController::persons'), array('name' => '[A-Za-z]+'), array(array('variable', '/', '[A-Za-z]+', 'name'), array('text', '/persons')), array(), array()),
         '_twig_error_test' => array(array('code', '_format'), array('_controller' => 'twig.controller.preview_error::previewErrorPageAction', '_format' => 'html'), array('code' => '\\d+'), array(array('variable', '.', '[^/]++', '_format'), array('variable', '/', '\\d+', 'code'), array('text', '/_error')), array(), array()),
         '_wdt' => array(array('token'), array('_controller' => 'web_profiler.controller.profiler::toolbarAction'), array(), array(array('variable', '/', '[^/]++', 'token'), array('text', '/_wdt')), array(), array()),
         '_profiler_home' => array(array(), array('_controller' => 'web_profiler.controller.profiler::homeAction'), array(), array(array('text', '/_profiler/')), array(), array()),

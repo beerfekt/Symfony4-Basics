@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+
+{%  block title  %}Show articles{% endblock %}
+
+{% block body %}
+
+    {# if there are articles delivered from the admin zone... #}
+    {% if articles %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Article Title</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {# loop through the $articles (in ArticleController.php) and show them #}
+                {%  for article in articles %}
+                    <tr>
+                        <td>
+                            {{ article }}
+                        </td>
+                        <td>
+                            <a href="/article/1" class="btn btn-dark">Show Article</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+
+    {% endif %}
+
+{% endblock %}

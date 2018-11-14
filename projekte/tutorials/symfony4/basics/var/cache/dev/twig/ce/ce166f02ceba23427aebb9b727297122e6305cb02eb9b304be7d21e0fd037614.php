@@ -70,31 +70,30 @@ class __TwigTemplate_50853c24623ef8d148a815f06886029716c98f1789bf75f727018f7888f
 
         // line 11
         echo "        <div>
-            <h1>Hello Symfony 4</h1>
-            <p class=\"lead\"> Testseite aus Tutorial: 
-\t\t\t\thttps://www.youtube.com/watch?v=sT4dMKSA1-A
+            <h1>Receive Values </h1>
+            <p class=\"lead\"> Receive Values from the Controller in Symfony 4
             </p>
         </div>     
 
         ";
-        // line 19
+        // line 18
         echo "        <ul>            
             <li>
                 ";
-        // line 21
-        echo twig_escape_filter($this->env, (((isset($context["somekey"]) || array_key_exists("somekey", $context))) ? (_twig_default_filter((isset($context["somekey"]) || array_key_exists("somekey", $context) ? $context["somekey"] : (function () { throw new Twig_Error_Runtime('Variable "somekey" does not exist.', 21, $this->source); })()), "NO value received - lets take  a lovely default value")) : ("NO value received - lets take  a lovely default value")), "html", null, true);
+        // line 20
+        echo twig_escape_filter($this->env, (((isset($context["somekey"]) || array_key_exists("somekey", $context))) ? (_twig_default_filter((isset($context["somekey"]) || array_key_exists("somekey", $context) ? $context["somekey"] : (function () { throw new Twig_Error_Runtime('Variable "somekey" does not exist.', 20, $this->source); })()), "NO value received - lets take  a lovely default value")) : ("NO value received - lets take  a lovely default value")), "html", null, true);
         echo "
             </li>
 
             <li>
                 ";
-        // line 25
-        echo twig_escape_filter($this->env, (((isset($context["someotherkey"]) || array_key_exists("someotherkey", $context))) ? (_twig_default_filter((isset($context["someotherkey"]) || array_key_exists("someotherkey", $context) ? $context["someotherkey"] : (function () { throw new Twig_Error_Runtime('Variable "someotherkey" does not exist.', 25, $this->source); })()), "NO value received - lets take  a  another lovely default value")) : ("NO value received - lets take  a  another lovely default value")), "html", null, true);
+        // line 24
+        echo twig_escape_filter($this->env, (((isset($context["someotherkey"]) || array_key_exists("someotherkey", $context))) ? (_twig_default_filter((isset($context["someotherkey"]) || array_key_exists("someotherkey", $context) ? $context["someotherkey"] : (function () { throw new Twig_Error_Runtime('Variable "someotherkey" does not exist.', 24, $this->source); })()), "NO value received - lets take  a  another lovely default value")) : ("NO value received - lets take  a  another lovely default value")), "html", null, true);
         echo "
             </li>
         </ul>
         ";
-        // line 29
+        // line 28
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -116,7 +115,7 @@ class __TwigTemplate_50853c24623ef8d148a815f06886029716c98f1789bf75f727018f7888f
 
     public function getDebugInfo()
     {
-        return array (  98 => 29,  92 => 25,  85 => 21,  81 => 19,  72 => 11,  63 => 10,  45 => 6,  15 => 3,);
+        return array (  97 => 28,  91 => 24,  84 => 20,  80 => 18,  72 => 11,  63 => 10,  45 => 6,  15 => 3,);
     }
 
     public function getSourceContext()
@@ -132,9 +131,8 @@ class __TwigTemplate_50853c24623ef8d148a815f06886029716c98f1789bf75f727018f7888f
 {# body definition wird in ....#}
 {% block body %}
         <div>
-            <h1>Hello Symfony 4</h1>
-            <p class=\"lead\"> Testseite aus Tutorial: 
-\t\t\t\thttps://www.youtube.com/watch?v=sT4dMKSA1-A
+            <h1>Receive Values </h1>
+            <p class=\"lead\"> Receive Values from the Controller in Symfony 4
             </p>
         </div>     
 
