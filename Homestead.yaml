@@ -36,7 +36,9 @@ sites:
     - map: angular-tutorial.test
       to:  /home/vagrant/projekte/tutorials/angular/public
 
+#the custom database will only take affekt when the vagrant-homestead box is fully destroyed and rebuild
 databases:
+    - homestead
     - symfony_tutorial
 
 
