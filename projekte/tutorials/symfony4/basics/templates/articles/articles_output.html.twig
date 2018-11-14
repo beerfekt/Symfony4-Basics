@@ -1,35 +1,47 @@
+
+{# base.html ist übergeordnetes template #}
 {% extends 'base.html.twig' %}
 
+{# Title wird je Seite überschrieben #}
+{% block title %}
+    Artikel in Datenbank speichern !
+{% endblock  %}
 
-{%  block title  %}Show articles{% endblock %}
-
+{# body definition ist  teil von base.html.twig, erbt sozusagen #}
+{# body definition wird in ....#}
 {% block body %}
 
+    <h1>Blog  </h1>
+    <p>Hier werden Daten vom -  {{  controller_name }} -  in Datenbank gespeichert und als Blog ausgegeben: </p>
     {# if there are articles delivered from the admin zone... #}
     {% if articles %}
         <table class="table table-striped">
             <thead>
-                <tr>
-                    <th>Article Title</th>
-                    <th>Actions</th>
-                </tr>
+            <tr>
+                <th>Article Title</th>
+                <th>Actions</th>
+            </tr>
             </thead>
             <tbody>
-                {# loop through the $articles (in ArticleController.php) and show them #}
-                {%  for article in articles %}
-                    <tr>
-                        <td>
-                            {{ article }}
-                        </td>
-                        <td>
-                            <a href="/article/1" class="btn btn-dark">Show Article</a>
-                        </td>
-                    </tr>
-                {% endfor %}
+            {# loop through the $articles (in ArticleController.php) and show them #}
+            {%  for article in articles %}
+                <tr>
+                    <td>
+
+                        {{ article.title  | default('NO value received ') }}
+                    </td>
+                    <td>
+                        <a href="/articles/{{ article.id }}" class="btn btn-dark">Show Article</a>
+                    </td>
+                </tr>
+            {% endfor %}
             </tbody>
         </table>
     {% else %}
-
+        <p> No data available! </p>
     {% endif %}
 
-{% endblock %}
+    {{ response | default('') }}
+
+{% endblock  %}
+

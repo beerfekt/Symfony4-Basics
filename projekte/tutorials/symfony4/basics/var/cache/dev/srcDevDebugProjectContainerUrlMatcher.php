@@ -65,6 +65,7 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             default:
                 $routes = array(
                     '/articles' => array(array('_route' => 'articles', '_controller' => 'App\\Controller\\ArticleController::index'), null, null, null),
+                    '/articles/save' => array(array('_route' => 'save_articles', '_controller' => 'App\\Controller\\ArticleController::save'), null, null, null),
                     '/contact/basic' => array(array('_route' => 'contactbasic', '_controller' => 'App\\Controller\\ContactController::contactBasic'), null, null, null),
                     '/contact' => array(array('_route' => 'contact', '_controller' => 'App\\Controller\\ContactController::contactValidation'), null, null, null),
                     '/' => array(array('_route' => 'welcome', '_controller' => 'App\\Controller\\ValueController::index'), null, null, null),
@@ -99,20 +100,21 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         $matchedPathinfo = $pathinfo;
         $regexList = array(
             0 => '{^(?'
-                    .'|/persons(?:/([A-Za-z]+))?(*:32)'
+                    .'|/articles/([^/]++)(*:25)'
+                    .'|/persons(?:/([A-Za-z]+))?(*:57)'
                     .'|/_(?'
-                        .'|error/(\\d+)(?:\\.([^/]++))?(*:70)'
-                        .'|wdt/([^/]++)(*:89)'
+                        .'|error/(\\d+)(?:\\.([^/]++))?(*:95)'
+                        .'|wdt/([^/]++)(*:114)'
                         .'|profiler/([^/]++)(?'
                             .'|/(?'
-                                .'|search/results(*:134)'
-                                .'|router(*:148)'
+                                .'|search/results(*:160)'
+                                .'|router(*:174)'
                                 .'|exception(?'
-                                    .'|(*:168)'
-                                    .'|\\.css(*:181)'
+                                    .'|(*:194)'
+                                    .'|\\.css(*:207)'
                                 .')'
                             .')'
-                            .'|(*:191)'
+                            .'|(*:217)'
                         .')'
                     .')'
                 .')$}sD',
@@ -123,14 +125,15 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 switch ($m = (int) $matches['MARK']) {
                     default:
                         $routes = array(
-                            32 => array(array('_route' => 'persons', 'name' => 'default value - testbert', '_controller' => 'App\\Controller\\ValueController::persons'), array('name'), null, null),
-                            70 => array(array('_route' => '_twig_error_test', '_controller' => 'twig.controller.preview_error::previewErrorPageAction', '_format' => 'html'), array('code', '_format'), null, null),
-                            89 => array(array('_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'), array('token'), null, null),
-                            134 => array(array('_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'), array('token'), null, null),
-                            148 => array(array('_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'), array('token'), null, null),
-                            168 => array(array('_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'), array('token'), null, null),
-                            181 => array(array('_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'), array('token'), null, null),
-                            191 => array(array('_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'), array('token'), null, null),
+                            25 => array(array('_route' => 'article_show', '_controller' => 'App\\Controller\\ArticleController::show'), array('id'), null, null),
+                            57 => array(array('_route' => 'persons', 'name' => 'default value - testbert', '_controller' => 'App\\Controller\\ValueController::persons'), array('name'), null, null),
+                            95 => array(array('_route' => '_twig_error_test', '_controller' => 'twig.controller.preview_error::previewErrorPageAction', '_format' => 'html'), array('code', '_format'), null, null),
+                            114 => array(array('_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'), array('token'), null, null),
+                            160 => array(array('_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'), array('token'), null, null),
+                            174 => array(array('_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'), array('token'), null, null),
+                            194 => array(array('_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'), array('token'), null, null),
+                            207 => array(array('_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'), array('token'), null, null),
+                            217 => array(array('_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'), array('token'), null, null),
                         );
 
                         list($ret, $vars, $requiredMethods, $requiredSchemes) = $routes[$m];
@@ -156,7 +159,7 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                         return $ret;
                 }
 
-                if (191 === $m) {
+                if (217 === $m) {
                     break;
                 }
                 $regex = substr_replace($regex, 'F', $m - $offset, 1 + strlen($m));

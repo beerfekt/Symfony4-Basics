@@ -21,6 +21,8 @@ class srcDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
         if (null === self::$declaredRoutes) {
             self::$declaredRoutes = array(
         'articles' => array(array(), array('_controller' => 'App\\Controller\\ArticleController::index'), array(), array(array('text', '/articles')), array(), array()),
+        'save_articles' => array(array(), array('_controller' => 'App\\Controller\\ArticleController::save'), array(), array(array('text', '/articles/save')), array(), array()),
+        'article_show' => array(array('id'), array('_controller' => 'App\\Controller\\ArticleController::show'), array(), array(array('variable', '/', '[^/]++', 'id'), array('text', '/articles')), array(), array()),
         'contactbasic' => array(array(), array('_controller' => 'App\\Controller\\ContactController::contactBasic'), array(), array(array('text', '/contact/basic')), array(), array()),
         'contact' => array(array(), array('_controller' => 'App\\Controller\\ContactController::contactValidation'), array(), array(array('text', '/contact')), array(), array()),
         'welcome' => array(array(), array('_controller' => 'App\\Controller\\ValueController::index'), array(), array(array('text', '/')), array(), array()),
