@@ -20,9 +20,11 @@ class srcDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
         $this->defaultLocale = $defaultLocale;
         if (null === self::$declaredRoutes) {
             self::$declaredRoutes = array(
-        'articles' => array(array(), array('_controller' => 'App\\Controller\\ArticleController::index'), array(), array(array('text', '/articles')), array(), array()),
-        'save_articles' => array(array(), array('_controller' => 'App\\Controller\\ArticleController::save'), array(), array(array('text', '/articles/save')), array(), array()),
+        'article_list' => array(array(), array('_controller' => 'App\\Controller\\ArticleController::index'), array(), array(array('text', '/articles')), array(), array()),
         'article_show' => array(array('id'), array('_controller' => 'App\\Controller\\ArticleController::show'), array(), array(array('variable', '/', '[^/]++', 'id'), array('text', '/articles')), array(), array()),
+        'app_article_loescheartikel' => array(array('id'), array('_controller' => 'App\\Controller\\ArticleController::loescheArtikel'), array(), array(array('variable', '/', '[^/]++', 'id'), array('text', '/article/delete')), array(), array()),
+        'new_article' => array(array(), array('_controller' => 'App\\Controller\\ArticleController::new'), array(), array(array('text', '/article/new')), array(), array()),
+        'edit_article' => array(array('id'), array('_controller' => 'App\\Controller\\ArticleController::edit'), array(), array(array('variable', '/', '[^/]++', 'id'), array('text', '/article/edit')), array(), array()),
         'contactbasic' => array(array(), array('_controller' => 'App\\Controller\\ContactController::contactBasic'), array(), array(array('text', '/contact/basic')), array(), array()),
         'contact' => array(array(), array('_controller' => 'App\\Controller\\ContactController::contactValidation'), array(), array(array('text', '/contact')), array(), array()),
         'welcome' => array(array(), array('_controller' => 'App\\Controller\\ValueController::index'), array(), array(array('text', '/')), array(), array()),

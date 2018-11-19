@@ -1,12 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    Artikel:  {{ article.title }}
+    Datenbank: Artikel - {{ article.title }}
 {% endblock title %}
 
 
 {% block body %}
     <h1>{{ article.title }}</h1>
     <p>{{ article.body }}</p>
-    <a href="/" >Go Back</a>
+    <hr>
+    <a href="{{ path('article_list') }}" >Go Back</a>
 {% endblock %}

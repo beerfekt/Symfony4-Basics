@@ -81,7 +81,7 @@ class __TwigTemplate_a71d02ae8955bab340c22fab3f602fd42ac8a201da1693ccd3782dad189
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"";
         // line 22
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("articles");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_list");
         echo "\"  >Articles</a>
                     </li>
 
@@ -131,7 +131,7 @@ class __TwigTemplate_a71d02ae8955bab340c22fab3f602fd42ac8a201da1693ccd3782dad189
                         <a class=\"nav-link\" href=\"{{path('contact')}}\"  >Contact</a>
                     </li>
                     <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"{{path('articles')}}\"  >Articles</a>
+                        <a class=\"nav-link\" href=\"{{path('article_list')}}\"  >Articles</a>
                     </li>
 
                 </ul>

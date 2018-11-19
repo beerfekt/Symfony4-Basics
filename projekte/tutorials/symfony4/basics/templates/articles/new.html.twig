@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Datenbank - Neuer Artikel
+{% endblock title %}
+
+
+{% block body %}
+    <h1>Neuer Artikel</h1>
+    <p>Neuen Artikel erstellen und in Datenbank speichern </p>
+    {{ form_start(form) }}  <!-- starttag -->
+    {{ form_widget(form) }} <!-- form-attributes -->
+    {{ form_end(form) }}    <!-- endtag -->
+    <hr>
+    <a href="{{ path('article_list') }}" >Go Back</a>
+{% endblock %}
+
+

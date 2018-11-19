@@ -51,7 +51,7 @@ class __TwigTemplate_f89cbc8dd5a775f60d2e5fd5b686c80af39853c1b4938e06fe6a464ab64
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         // line 4
-        echo "    Artikel:  ";
+        echo "    Datenbank: Artikel - ";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new Twig_Error_Runtime('Variable "article" does not exist.', 4, $this->source); })()), "title", array()), "html", null, true);
         echo "
 ";
@@ -80,7 +80,11 @@ class __TwigTemplate_f89cbc8dd5a775f60d2e5fd5b686c80af39853c1b4938e06fe6a464ab64
         // line 10
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new Twig_Error_Runtime('Variable "article" does not exist.', 10, $this->source); })()), "body", array()), "html", null, true);
         echo "</p>
-    <a href=\"/\" >Go Back</a>
+    <hr>
+    <a href=\"";
+        // line 12
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_list");
+        echo "\" >Go Back</a>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -102,7 +106,7 @@ class __TwigTemplate_f89cbc8dd5a775f60d2e5fd5b686c80af39853c1b4938e06fe6a464ab64
 
     public function getDebugInfo()
     {
-        return array (  81 => 10,  76 => 9,  67 => 8,  54 => 4,  45 => 3,  15 => 1,);
+        return array (  86 => 12,  81 => 10,  76 => 9,  67 => 8,  54 => 4,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -110,14 +114,15 @@ class __TwigTemplate_f89cbc8dd5a775f60d2e5fd5b686c80af39853c1b4938e06fe6a464ab64
         return new Twig_Source("{% extends 'base.html.twig' %}
 
 {% block title %}
-    Artikel:  {{ article.title }}
+    Datenbank: Artikel - {{ article.title }}
 {% endblock title %}
 
 
 {% block body %}
     <h1>{{ article.title }}</h1>
     <p>{{ article.body }}</p>
-    <a href=\"/\" >Go Back</a>
+    <hr>
+    <a href=\"{{ path('article_list') }}\" >Go Back</a>
 {% endblock %}", "articles/show.html.twig", "/home/vagrant/projekte/tutorials/symfony4/basics/templates/articles/show.html.twig");
     }
 }
