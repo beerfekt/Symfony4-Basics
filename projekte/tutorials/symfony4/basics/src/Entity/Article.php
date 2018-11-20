@@ -48,30 +48,30 @@ class Article
 //STEP5 : Write down below getters/setters (Playn php)
 
 
-    public function getId()
+    public function getId() : ?int
     {
         return $this->id;
     }
 
 
-    public function setTitle($title)
+    public function setTitle(string $title)
     {
         $this->title = $title;
     }
 
-    public function getTitle()
+    public function getTitle() :?string
     {
         return $this->title;
     }
 
 
 
-    public function setBody($body)
+    public function setBody(string $body)
     {
         $this->body = $body;
     }
 
-    public function getBody()
+    public function getBody() : ?string
     {
         return $this->body;
     }

@@ -4,7 +4,9 @@ namespace App\Controller;
 
 use App\Entity\Article;
 
+use Doctrine\DBAL\Schema\View;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Form;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,7 +28,7 @@ class ArticleController extends AbstractController
     /**
      * @Route("/articles", name="article_list")
      */
-    public function index()
+    public function index() : Response
     {
         //Fetch all articles
         $articles = $this->getDoctrine()->getRepository(Article::class)->findAll();
@@ -48,7 +50,7 @@ class ArticleController extends AbstractController
     /**
      * @Route("/articles/{id}", name="article_show")
      */
-    public function show($id)
+    public function show(int $id) : Response
     {
         $article = $this->findeArtikel($id);
 
@@ -68,7 +70,7 @@ class ArticleController extends AbstractController
      * @Route("/article/delete/{id}" )
      * Method({"DELETE"})
      */
-    public function loescheArtikel(Request $request, $id)
+    public function loescheArtikel(Request $request,int $id)
     {
         $article = $this->getDoctrine()
             ->getRepository(Article::class)
@@ -89,7 +91,7 @@ class ArticleController extends AbstractController
      * @Route("/article/new", name="new_article")
      * Method({"GET", "POST"})
      */
-    public function new(Request $request) {
+    public function new(Request $request) : Response {
 
         $article = new Article();
         $form = $this->erstelleForm('Create', $article );
@@ -116,7 +118,7 @@ class ArticleController extends AbstractController
      * @Route("/article/edit/{id}", name="edit_article")
      * Method({"GET", "POST"})
      */
-    public function edit(Request $request, $id) {
+    public function edit(Request $request,int $id) :Response {
 
         $form = $this->erstelleForm('Edit', $this->findeArtikel($id));
 
@@ -136,7 +138,7 @@ class ArticleController extends AbstractController
 
 
     //Artikel über ID finden:
-    protected function findeArtikel($id)
+    protected function findeArtikel(int $id) :Article
     {
         return $this->getDoctrine()
             ->getRepository(Article::class)
@@ -145,7 +147,7 @@ class ArticleController extends AbstractController
 
 
     //Artikel über ID finden:
-    protected function findeAlleArtikel()
+    protected function findeAlleArtikel():Form
     {
         return $this->getDoctrine()
             ->getRepository(Article::class)
@@ -154,7 +156,7 @@ class ArticleController extends AbstractController
 
 
     //Daten in DB schreiben
-    private function writeDataIntoDB ($form){
+    private function writeDataIntoDB (Form $form){
         if ($form->isSubmitted() && $form->isValid())
         {
             $article = $form->getData();
@@ -166,7 +168,7 @@ class ArticleController extends AbstractController
 
 
     //Form erstellen
-    protected function erstelleForm($buttonLabel, $article)
+    protected function erstelleForm(string $buttonLabel, Article $article):Form
     {
 
         $formControl = array('class' => 'form-control');
