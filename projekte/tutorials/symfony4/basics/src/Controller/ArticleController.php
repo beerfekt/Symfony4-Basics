@@ -50,7 +50,7 @@ class ArticleController extends AbstractController
      */
     public function show($id)
     {
-        $article = $this->findeArtikelMitID($id);
+        $article = $this->findeArtikel($id);
 
         return $this->render('articles/show.html.twig',
             [
@@ -60,64 +60,6 @@ class ArticleController extends AbstractController
         );
     }//index()
 
-
-
-
-
-
-
-
-
-    //Artikel über ID finden:
-    protected function findeArtikelMitID($id)
-    {
-        return $this->getDoctrine()
-                    ->getRepository(Article::class)
-                    ->find($id);
-    }
-
-
-
-
-    //Form erstellen
-    protected function erstelleForm($article, $buttonName, $routenName)
-    {
-        $formcontrol = array('class' => 'form-control');
-
-        return $this->createFormBuilder($article)
-                    ->add('title',
-                        TextType::class,
-                        array('attr' => $formcontrol
-                        )
-                    )
-                    ->add('body',
-                        TextareaType::class,
-                        array('required' => false,
-                            'attr' => $formcontrol
-                        )
-                    )
-                    ->add('save',
-                        SubmitType::class,
-                        array('label' => $buttonName,
-                            'attr' => array('class' => 'btn btn-primary mt-3')
-                        )
-                    )
-                    ->setAction($this->generateUrl($routenName, array('slug' =>'test')))
-                    ->getForm();
-    }//createForm()
-
-
-
-    //Daten in DB schreiben
-    private function writeDataIntoDB ($form){
-        if ($form->isSubmitted() && $form->isValid())
-        {
-            $article = $form->getData();
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($article);
-            $entityManager->flush();
-        }
-    }
 
 
 
@@ -148,21 +90,12 @@ class ArticleController extends AbstractController
      * Method({"GET", "POST"})
      */
     public function new(Request $request) {
+
         $article = new Article();
-        $form = $this->createFormBuilder($article)
-            ->add('title',
-                   TextType::class,
-                    array('attr' => array('class' => 'form-control')))
-            ->add('body', TextareaType::class, array(
-                'required' => false,
-                'attr' => array('class' => 'form-control')
-            ))
-            ->add('save', SubmitType::class, array(
-                'label' => 'Create',
-                'attr' => array('class' => 'btn btn-primary mt-3')
-            ))
-            ->getForm();
+        $form = $this->erstelleForm('Create', $article );
+
         $form->handleRequest($request);
+
         if($form->isSubmitted() && $form->isValid()) {
             $article = $form->getData();
             $entityManager = $this->getDoctrine()->getManager();
@@ -170,6 +103,7 @@ class ArticleController extends AbstractController
             $entityManager->flush();
             return $this->redirectToRoute('article_list');
         }
+
         return $this->render('articles/new.html.twig', array(
             'form' => $form->createView()
         ));
@@ -183,30 +117,78 @@ class ArticleController extends AbstractController
      * Method({"GET", "POST"})
      */
     public function edit(Request $request, $id) {
-        $article = new Article();
-        $article = $this->getDoctrine()->getRepository(Article::class)->find($id);
-        $form = $this->createFormBuilder($article)
-            ->add('title', TextType::class, array('attr' => array('class' => 'form-control')))
-            ->add('body', TextareaType::class, array(
-                'required' => false,
-                'attr' => array('class' => 'form-control')
-            ))
-            ->add('save', SubmitType::class, array(
-                'label' => 'Update',
-                'attr' => array('class' => 'btn btn-primary mt-3')
-            ))
-            ->getForm();
+
+        $form = $this->erstelleForm('Edit', $this->findeArtikel($id));
+
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->flush();
             return $this->redirectToRoute('article_list');
         }
+
         return $this->render('articles/edit.html.twig', array(
             'form' => $form->createView()
         ));
     }
 
+
+
+
+    //Artikel über ID finden:
+    protected function findeArtikel($id)
+    {
+        return $this->getDoctrine()
+            ->getRepository(Article::class)
+            ->find($id);
+    }
+
+
+    //Artikel über ID finden:
+    protected function findeAlleArtikel()
+    {
+        return $this->getDoctrine()
+            ->getRepository(Article::class)
+            ->findAll();
+    }
+
+
+    //Daten in DB schreiben
+    private function writeDataIntoDB ($form){
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $article = $form->getData();
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($article);
+            $entityManager->flush();
+        }
+    }
+
+
+
+
+    //Form erstellen
+    protected function erstelleForm($buttonLabel, $article)
+    {
+
+        $formControl = array('class' => 'form-control');
+
+        $form = $this->createFormBuilder($article)
+            ->add('title',
+                TextType::class,
+                array('attr' => $formControl))
+            ->add('body', TextareaType::class, array(
+                'required' => false,
+                'attr' => $formControl
+            ))
+            ->add('save', SubmitType::class, array(
+                'label' => $buttonLabel,
+                'attr' => array('class' => 'btn btn-primary mt-3')
+            ))
+            ->getForm();
+
+        return $form;
+    }
 
 
 
@@ -220,7 +202,7 @@ class ArticleController extends AbstractController
 
 
 
-
+//array-loop test
 /*
 
     private function createArticles()
@@ -254,79 +236,6 @@ class ArticleController extends AbstractController
      }
 
 
-
-
-
-    /**
-     * @Route("/articles/save", name="save_articles")
-     */
-
-/*
-public function save()
-{
-
-    $article = new Article();
-    $article->setTitle('testtitel');
-    $article->setBody('Testnachricht du vollpfosten hanswurst, haderlump!!!');
-
-
-    // you can fetch the EntityManager via $this->getDoctrine()
-    // or you can add an argument to your action: index(EntityManagerInterface $entityManager)
-    $entityManager = $this->getDoctrine()->getManager();
-    // tell Doctrine you want to (eventually) save the Product (no queries yet)
-    $entityManager->persist($article);
-    // actually executes the queries (i.e. the INSERT query)
-    $entityManager->flush();
-
-    return new Response('Saved an article with the id of  '.$article->getId()) ;
-}//index()
-
-
-
-    /**
-     * @Route("/article/new", name="article_new")
-     * Method({"GET", "POST"})
-     */
-
-/*
-public function artikelNew()
-{
-    //Form erstellen
-    $form = $this->erstelleForm( new Article() , 'Create','article_create');
-
-    //Form an Frontend übergeben:
-    return $this->render('articles/new.html.twig',
-        ['formView' => $form->createView(),
-            'form' => $form
-        ]
-    );
-
-
-}
-*/
-
-
-// artikelNew() springt auf artikelErstellen()
-
-/*
-/**
- * @Route("/article/create", name="article_create")
- * Method({"GET", "POST"})
- */
-/*
-public function artikelErstellen(Request $request)
-{
-    $form = request.$this->getParameter('form');
-
-    //Form Verhalten zuweisen:
-    $form->handleRequest($request);
-
-    //Daten der Form in Datenbank schreiben
-    $this->writeDataIntoDB($form);
-    return $this->redirectToRoute('article_list');
-
-}
-*/
 
 
 
