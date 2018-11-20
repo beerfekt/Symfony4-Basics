@@ -78,9 +78,9 @@ class ArticleController extends AbstractController
         $entityManager->remove($article);
         $entityManager->flush();
 
-        $response = new Response();
-
-        $response->send();
+        $this->addFlash('success', 'Artikel mit Id: ' . $id . ' <br> wurde erfolgreich gelöscht!');
+        //$response = new Response();
+        //$response->send();
     }
 
 
@@ -165,8 +165,6 @@ class ArticleController extends AbstractController
     }
 
 
-
-
     //Form erstellen
     protected function erstelleForm($buttonLabel, $article)
     {
@@ -189,9 +187,6 @@ class ArticleController extends AbstractController
 
         return $form;
     }
-
-
-
 
 }//endof class
 

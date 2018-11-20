@@ -19,6 +19,8 @@
      {# asset() hilfsfunktion - sucht nach datei und fügt diese ein#}
               href={{ asset('css/custom-styles.css') }} >
     {% endblock %}
+    {#insert js files - needet for bootstrap ect. #}
+
 
 </head>
 
@@ -30,22 +32,19 @@
 
     <main role="main" class="container main">
         {# insert flash-message template #}
-        {% include 'flash_messages.html.twig' %} 
+        {% include 'flash_messages.html.twig' %}
         {# insert content templates #}
         {% block body %}{% endblock %}
     </main>
 
-    {#insert js files - needet for bootstrap ect. #}
-    {% block javascripts %}
-        {# TODO : JQuery  über npm package einfügen #}
-        <script src={{ asset ('node_modules/jquery/dist/jquery.slim.min.js') }} type="text/javascript" ></script> 
-        
-        {# Bootstrap Latest compiled and minified JavaScript #}
-        <script src={{ asset ('node_modules/bootstrap/dist/js/bootstrap.min.js') }} type="text/javascript" ></script>
-        {# JQuery test #}
-      <!-- <script src={{ asset ('js/jquery-test.js') }} type="text/javascript" ></script> --> 
+   {% block javascripts   %}
+       <script src={{ asset ('node_modules/jquery/dist/jquery.slim.min.js') }} type="text/javascript" ></script>
+       {# Bootstrap Latest compiled and minified JavaScript #}
+       <script src={{ asset ('node_modules/bootstrap/dist/js/bootstrap.min.js') }} type="text/javascript" ></script>
+       {# JQuery test #}
 
-    {% endblock %}
+       <!-- <script src={{ asset ('js/jquery-test.js') }} type="text/javascript" ></script> -->
+   {% endblock %}
 
  </body>
 </html>

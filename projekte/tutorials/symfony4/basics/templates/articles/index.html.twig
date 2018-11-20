@@ -7,10 +7,16 @@
    Datenbank: Artikel speichern !
 {% endblock  %}
 
+
+
 {# body definition ist  teil von base.html.twig, erbt sozusagen #}
 {# body definition wird in ....#}
 {% block body %}
 
+{#
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+#}
     <h1>Blog  </h1>
     <p>Hier werden Daten vom -  {{  controller_name }} -  in <strong>Datenbank</strong> gespeichert und als Blog ausgegeben: </p>
     {# if there are articles delivered from the admin zone... #}
@@ -42,6 +48,7 @@
                     </td>
                 </tr>
             {% endfor %}
+
             </tbody>
         </table>
     {% else %}
@@ -51,6 +58,13 @@
     <a class = "btn btn-primary" href= "{{ path('new_article') }}"  >New</a>
 {% endblock  %}
 
-{% block javascripts %}
-    <script src={{ asset('js/main.js') }}></script>
-{% endblock %}
+
+    {% block javascripts %}
+        <script src={{ asset ('node_modules/jquery/dist/jquery.slim.min.js') }} type="text/javascript" ></script>
+        {# Bootstrap Latest compiled and minified JavaScript #}
+        <script src={{ asset ('node_modules/bootstrap/dist/js/bootstrap.min.js') }} type="text/javascript" ></script>
+        {# JQuery test #}
+
+        <!-- <script src={{ asset ('js/jquery-test.js') }} type="text/javascript" ></script> -->
+        <script src={{ asset('js/main.js') }}></script>
+    {% endblock %}

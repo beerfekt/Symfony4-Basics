@@ -38,7 +38,6 @@ class ContactController extends AbstractController
      */
     public function contactValidation(Request $request,  \Swift_Mailer $mailer)
     {   
-
     	dump($request);
 
     	//Form erstellen (ContactType ist gleich src/Form/ContactType)
@@ -47,10 +46,8 @@ class ContactController extends AbstractController
     	//Form auf eingehenden Request ansetzen:
     	$form->handleRequest($request);
 
-
     	//$this->doSomethingWithTheFormData($form);
     	$this->sendEmail($mailer, $form);
-
 
     	//FormView wird benötigt als Argument:
         $form_view = $form->createView();
@@ -128,6 +125,7 @@ class ContactController extends AbstractController
             );
 
        		$mailer->send($message); 
+            //FLASH-Message
        		$this->addFlash('success', 'Email wurde versandt');
 			
 			return $this->redirectToRoute('welcome');

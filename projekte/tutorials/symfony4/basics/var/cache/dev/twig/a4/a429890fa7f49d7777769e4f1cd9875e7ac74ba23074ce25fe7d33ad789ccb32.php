@@ -49,36 +49,38 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
         // line 13
         $this->displayBlock('stylesheets', $context, $blocks);
         // line 22
+        echo "    ";
+        // line 23
         echo "
+
 </head>
 
 
 <body>
     <header>
         ";
-        // line 28
-        $this->loadTemplate("main_nav.html.twig", "base.html.twig", 28)->display($context);
-        // line 29
+        // line 30
+        $this->loadTemplate("main_nav.html.twig", "base.html.twig", 30)->display($context);
+        // line 31
         echo "    </header>
 
     <main role=\"main\" class=\"container main\">
         ";
-        // line 33
-        echo "        ";
-        $this->loadTemplate("flash_messages.html.twig", "base.html.twig", 33)->display($context);
-        echo " 
-        ";
         // line 35
         echo "        ";
-        $this->displayBlock('body', $context, $blocks);
+        $this->loadTemplate("flash_messages.html.twig", "base.html.twig", 35)->display($context);
         // line 36
+        echo "        ";
+        // line 37
+        echo "        ";
+        $this->displayBlock('body', $context, $blocks);
+        // line 38
         echo "    </main>
 
-    ";
-        // line 39
-        echo "    ";
+   ";
+        // line 40
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 49
+        // line 48
         echo "
  </body>
 </html>
@@ -141,7 +143,7 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
 
     }
 
-    // line 35
+    // line 37
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -158,7 +160,7 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
 
     }
 
-    // line 39
+    // line 40
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -167,25 +169,23 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 40
-        echo "        ";
         // line 41
-        echo "        <script src=";
+        echo "       <script src=";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("node_modules/jquery/dist/jquery.slim.min.js"), "html", null, true);
-        echo " type=\"text/javascript\" ></script> 
-        
-        ";
-        // line 44
-        echo "        <script src=";
+        echo " type=\"text/javascript\" ></script>
+       ";
+        // line 43
+        echo "       <script src=";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("node_modules/bootstrap/dist/js/bootstrap.min.js"), "html", null, true);
         echo " type=\"text/javascript\" ></script>
-        ";
+       ";
+        // line 45
+        echo "
+       <!-- <script src=";
         // line 46
-        echo "      <!-- <script src=";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jquery-test.js"), "html", null, true);
-        echo " type=\"text/javascript\" ></script> --> 
-
-    ";
+        echo " type=\"text/javascript\" ></script> -->
+   ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -206,7 +206,7 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
 
     public function getDebugInfo()
     {
-        return array (  184 => 46,  179 => 44,  173 => 41,  171 => 40,  162 => 39,  145 => 35,  132 => 20,  126 => 16,  122 => 14,  113 => 13,  95 => 10,  82 => 49,  79 => 39,  75 => 36,  72 => 35,  67 => 33,  62 => 29,  60 => 28,  52 => 22,  50 => 13,  46 => 11,  44 => 10,  33 => 1,);
+        return array (  186 => 46,  183 => 45,  178 => 43,  173 => 41,  164 => 40,  147 => 37,  134 => 20,  128 => 16,  124 => 14,  115 => 13,  97 => 10,  84 => 48,  82 => 40,  78 => 38,  75 => 37,  73 => 36,  70 => 35,  65 => 31,  63 => 30,  54 => 23,  52 => 22,  50 => 13,  46 => 11,  44 => 10,  33 => 1,);
     }
 
     public function getSourceContext()
@@ -232,6 +232,8 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
      {# asset() hilfsfunktion - sucht nach datei und fügt diese ein#}
               href={{ asset('css/custom-styles.css') }} >
     {% endblock %}
+    {#insert js files - needet for bootstrap ect. #}
+
 
 </head>
 
@@ -243,22 +245,19 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
 
     <main role=\"main\" class=\"container main\">
         {# insert flash-message template #}
-        {% include 'flash_messages.html.twig' %} 
+        {% include 'flash_messages.html.twig' %}
         {# insert content templates #}
         {% block body %}{% endblock %}
     </main>
 
-    {#insert js files - needet for bootstrap ect. #}
-    {% block javascripts %}
-        {# TODO : JQuery  über npm package einfügen #}
-        <script src={{ asset ('node_modules/jquery/dist/jquery.slim.min.js') }} type=\"text/javascript\" ></script> 
-        
-        {# Bootstrap Latest compiled and minified JavaScript #}
-        <script src={{ asset ('node_modules/bootstrap/dist/js/bootstrap.min.js') }} type=\"text/javascript\" ></script>
-        {# JQuery test #}
-      <!-- <script src={{ asset ('js/jquery-test.js') }} type=\"text/javascript\" ></script> --> 
+   {% block javascripts   %}
+       <script src={{ asset ('node_modules/jquery/dist/jquery.slim.min.js') }} type=\"text/javascript\" ></script>
+       {# Bootstrap Latest compiled and minified JavaScript #}
+       <script src={{ asset ('node_modules/bootstrap/dist/js/bootstrap.min.js') }} type=\"text/javascript\" ></script>
+       {# JQuery test #}
 
-    {% endblock %}
+       <!-- <script src={{ asset ('js/jquery-test.js') }} type=\"text/javascript\" ></script> -->
+   {% endblock %}
 
  </body>
 </html>
