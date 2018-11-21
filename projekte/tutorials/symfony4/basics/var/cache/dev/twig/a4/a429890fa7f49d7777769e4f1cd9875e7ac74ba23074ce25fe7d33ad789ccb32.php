@@ -48,9 +48,9 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
     ";
         // line 13
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 22
+        // line 20
         echo "    ";
-        // line 23
+        // line 21
         echo "
 
 </head>
@@ -59,28 +59,31 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
 <body>
     <header>
         ";
-        // line 30
-        $this->loadTemplate("main_nav.html.twig", "base.html.twig", 30)->display($context);
-        // line 31
-        echo "    </header>
+        // line 28
+        $this->loadTemplate("main_nav.html.twig", "base.html.twig", 28)->display($context);
+        // line 29
+        echo "        <a href= \"";
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
+        echo "\" >Logout</a>
+    </header>
 
     <main role=\"main\" class=\"container main\">
         ";
+        // line 34
+        echo "        ";
+        $this->loadTemplate("flash_messages.html.twig", "base.html.twig", 34)->display($context);
         // line 35
         echo "        ";
-        $this->loadTemplate("flash_messages.html.twig", "base.html.twig", 35)->display($context);
         // line 36
         echo "        ";
-        // line 37
-        echo "        ";
         $this->displayBlock('body', $context, $blocks);
-        // line 38
+        // line 37
         echo "    </main>
 
    ";
-        // line 40
+        // line 39
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 48
+        // line 47
         echo "
  </body>
 </html>
@@ -123,17 +126,15 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
         // line 14
         echo "        <!-- core CSS -->
         <!-- Bootstrap core  -->
-        <link rel=\"stylesheet\" href=";
+        <link rel=\"stylesheet\" href=\"";
         // line 16
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("node_modules/bootstrap/dist/css/bootstrap.min.css"), "html", null, true);
-        echo ">
+        echo "\" />
         <!-- eigenes CSS -->
-        <link rel=\"stylesheet\"
-     ";
-        // line 20
-        echo "              href=";
+        <link rel=\"stylesheet\" href=\"";
+        // line 18
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/custom-styles.css"), "html", null, true);
-        echo " >
+        echo "\" />
     ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -143,7 +144,7 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
 
     }
 
-    // line 37
+    // line 36
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -160,7 +161,7 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
 
     }
 
-    // line 40
+    // line 39
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -169,20 +170,20 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 41
+        // line 40
         echo "       <script src=";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("node_modules/jquery/dist/jquery.slim.min.js"), "html", null, true);
         echo " type=\"text/javascript\" ></script>
        ";
-        // line 43
+        // line 42
         echo "       <script src=";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("node_modules/bootstrap/dist/js/bootstrap.min.js"), "html", null, true);
         echo " type=\"text/javascript\" ></script>
        ";
-        // line 45
+        // line 44
         echo "
        <!-- <script src=";
-        // line 46
+        // line 45
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jquery-test.js"), "html", null, true);
         echo " type=\"text/javascript\" ></script> -->
    ";
@@ -206,7 +207,7 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
 
     public function getDebugInfo()
     {
-        return array (  186 => 46,  183 => 45,  178 => 43,  173 => 41,  164 => 40,  147 => 37,  134 => 20,  128 => 16,  124 => 14,  115 => 13,  97 => 10,  84 => 48,  82 => 40,  78 => 38,  75 => 37,  73 => 36,  70 => 35,  65 => 31,  63 => 30,  54 => 23,  52 => 22,  50 => 13,  46 => 11,  44 => 10,  33 => 1,);
+        return array (  187 => 45,  184 => 44,  179 => 42,  174 => 40,  165 => 39,  148 => 36,  136 => 18,  131 => 16,  127 => 14,  118 => 13,  100 => 10,  87 => 47,  85 => 39,  81 => 37,  78 => 36,  76 => 35,  73 => 34,  65 => 29,  63 => 28,  54 => 21,  52 => 20,  50 => 13,  46 => 11,  44 => 10,  33 => 1,);
     }
 
     public function getSourceContext()
@@ -226,11 +227,9 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
     {% block stylesheets %}
         <!-- core CSS -->
         <!-- Bootstrap core  -->
-        <link rel=\"stylesheet\" href={{ asset ('node_modules/bootstrap/dist/css/bootstrap.min.css') }}>
+        <link rel=\"stylesheet\" href=\"{{ asset ('node_modules/bootstrap/dist/css/bootstrap.min.css') }}\" />
         <!-- eigenes CSS -->
-        <link rel=\"stylesheet\"
-     {# asset() hilfsfunktion - sucht nach datei und fügt diese ein#}
-              href={{ asset('css/custom-styles.css') }} >
+        <link rel=\"stylesheet\" href=\"{{ asset('css/custom-styles.css') }}\" />
     {% endblock %}
     {#insert js files - needet for bootstrap ect. #}
 
@@ -241,6 +240,7 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
 <body>
     <header>
         {% include 'main_nav.html.twig' %}
+        <a href= \"{{ path('logout') }}\" >Logout</a>
     </header>
 
     <main role=\"main\" class=\"container main\">

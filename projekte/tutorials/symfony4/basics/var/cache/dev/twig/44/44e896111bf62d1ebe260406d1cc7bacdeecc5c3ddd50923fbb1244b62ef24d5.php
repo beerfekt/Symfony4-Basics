@@ -248,6 +248,6 @@ class __TwigTemplate_68d277b8953bd045424da5b647cd33ca2f7093e1a2f86225ae260266540
         {{- form_rest(form) -}}
     </table>
 {%- endblock form_widget_compound -%}
-", "form_table_layout.html.twig", "/home/vagrant/projekte/tutorials/symfony4/basics/vendor/symfony/twig-bridge/Resources/views/Form/form_table_layout.html.twig");
+", "form_table_layout.html.twig", "/vagrant/projekte/tutorials/symfony4/basics/vendor/symfony/twig-bridge/Resources/views/Form/form_table_layout.html.twig");
     }
 }

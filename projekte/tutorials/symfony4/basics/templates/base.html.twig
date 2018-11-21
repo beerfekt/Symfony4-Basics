@@ -13,11 +13,9 @@
     {% block stylesheets %}
         <!-- core CSS -->
         <!-- Bootstrap core  -->
-        <link rel="stylesheet" href={{ asset ('node_modules/bootstrap/dist/css/bootstrap.min.css') }}>
+        <link rel="stylesheet" href="{{ asset ('node_modules/bootstrap/dist/css/bootstrap.min.css') }}" />
         <!-- eigenes CSS -->
-        <link rel="stylesheet"
-     {# asset() hilfsfunktion - sucht nach datei und fügt diese ein#}
-              href={{ asset('css/custom-styles.css') }} >
+        <link rel="stylesheet" href="{{ asset('css/custom-styles.css') }}" />
     {% endblock %}
     {#insert js files - needet for bootstrap ect. #}
 
@@ -28,6 +26,7 @@
 <body>
     <header>
         {% include 'main_nav.html.twig' %}
+        <a href= "{{ path('logout') }}" >Logout</a>
     </header>
 
     <main role="main" class="container main">

@@ -3,11 +3,17 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
+
+
+//Security Settings are in :
+//     projekte/.. ../basics/config/packages/security.yaml
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User
+class User implements UserInterface /* , \Serializable  */
 {
     /**
      * @ORM\Id()
@@ -22,14 +28,20 @@ class User
     private $username;
 
     /**
-     * @ORM\Column(type="string", length=50, unique=true)
+     * @ORM\Column(type="string", length=200, unique=true)
      */
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=100, unique=true)
+     * @ORM\Column(type="string", length=50, unique=true)
      */
     private $email;
+
+
+
+
+
+    //Getters and Setters
 
     public function getId(): ?int
     {
@@ -70,4 +82,50 @@ class User
 
         return $this;
     }
+
+
+    //User Interface implementation:
+
+    public function getRoles() :array
+    {
+        return [
+            'ROLE_USER'
+        ];
+    }
+
+
+
+    public function getSalt(){}
+
+    public function eraseCredentials(){
+
+    }
+
+    //serialize wird irgendwie nicht benötigt? kein fehler? checken!
+
+    /*
+
+    public function serialize()
+    {
+        return serialize(
+            [ $this->id,
+              $this->username,
+              $this->email,
+              $this->password  ]
+        );
+    }
+
+
+    public function unserialize()
+    {
+        list (
+             $this->id,
+             $this->username,
+             $this->email,
+             $this->password
+        ) = $this->unserialize($string, ['allowed_classes' => false]);
+    }
+
+       */
+
 }

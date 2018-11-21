@@ -68,6 +68,8 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     '/article/new' => array(array('_route' => 'new_article', '_controller' => 'App\\Controller\\ArticleController::new'), null, null, null),
                     '/contact/basic' => array(array('_route' => 'contactbasic', '_controller' => 'App\\Controller\\ContactController::contactBasic'), null, null, null),
                     '/contact' => array(array('_route' => 'contact', '_controller' => 'App\\Controller\\ContactController::contactValidation'), null, null, null),
+                    '/login' => array(array('_route' => 'login', '_controller' => 'App\\Controller\\SecurityController::login'), null, null, null),
+                    '/logout' => array(array('_route' => 'logout', '_controller' => 'App\\Controller\\SecurityController::logout'), null, null, null),
                     '/' => array(array('_route' => 'welcome', '_controller' => 'App\\Controller\\ValueController::index'), null, null, null),
                     '/values' => array(array('_route' => 'values', '_controller' => 'App\\Controller\\ValueController::values'), null, null, null),
                     '/_profiler/' => array(array('_route' => '_profiler_home', '_controller' => 'web_profiler.controller.profiler::homeAction'), null, null, null),

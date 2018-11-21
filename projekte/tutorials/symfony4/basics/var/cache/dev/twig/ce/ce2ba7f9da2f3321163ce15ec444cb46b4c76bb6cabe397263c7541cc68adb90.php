@@ -140,6 +140,6 @@ class __TwigTemplate_8c133eabf5e70dbc419bc15901e2a6033bb649ba85b54e5228f88945b4d
     <h2>{{ messages[about].title }}</h2>
     <p>{{ messages[about].message }}</p>
 {% endblock %}
-", "@WebProfiler/Profiler/info.html.twig", "/home/vagrant/projekte/tutorials/symfony4/basics/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/info.html.twig");
+", "@WebProfiler/Profiler/info.html.twig", "/vagrant/projekte/tutorials/symfony4/basics/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/info.html.twig");
     }
 }

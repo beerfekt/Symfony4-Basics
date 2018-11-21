@@ -63,6 +63,6 @@ class __TwigTemplate_3f993f61951fce8bfca9439f9f80e4cdfed12266cf8690568c75dcc87af
     : \$view['form']->humanize(\$name); } ?>
 <label<?php if (\$label_attr) { echo ' '.\$view['form']->block(\$form, 'attributes', array('attr' => \$label_attr)); } ?>><?php echo \$view->escape(false !== \$translation_domain ? \$view['translator']->trans(\$label, array(), \$translation_domain) : \$label) ?></label>
 <?php endif ?>
-", "@Framework/Form/form_label.html.php", "/home/vagrant/projekte/tutorials/symfony4/basics/vendor/symfony/framework-bundle/Resources/views/Form/form_label.html.php");
+", "@Framework/Form/form_label.html.php", "/vagrant/projekte/tutorials/symfony4/basics/vendor/symfony/framework-bundle/Resources/views/Form/form_label.html.php");
     }
 }

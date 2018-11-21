@@ -49,6 +49,6 @@ class __TwigTemplate_fb9188c3142e44c1fd8ea1b87e999f79aa79f211642ee1597943b2f308b
     public function getSourceContext()
     {
         return new Twig_Source("<?php echo \$view['form']->block(\$form, 'form_widget_simple', array('type' => isset(\$type) ? \$type : 'number')) ?>
-", "@Framework/Form/integer_widget.html.php", "/home/vagrant/projekte/tutorials/symfony4/basics/vendor/symfony/framework-bundle/Resources/views/Form/integer_widget.html.php");
+", "@Framework/Form/integer_widget.html.php", "/vagrant/projekte/tutorials/symfony4/basics/vendor/symfony/framework-bundle/Resources/views/Form/integer_widget.html.php");
     }
 }

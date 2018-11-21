@@ -65,6 +65,6 @@ class __TwigTemplate_d5e4851c222f0c72578670b608bd7c424d8ff327248856e6778db2836cb
 <?php printf('%s=\"%s\" ', \$view->escape(\$k), \$view->escape(\$v)) ?>
 <?php endif ?>
 <?php endforeach ?>
-", "@Framework/Form/attributes.html.php", "/home/vagrant/projekte/tutorials/symfony4/basics/vendor/symfony/framework-bundle/Resources/views/Form/attributes.html.php");
+", "@Framework/Form/attributes.html.php", "/vagrant/projekte/tutorials/symfony4/basics/vendor/symfony/framework-bundle/Resources/views/Form/attributes.html.php");
     }
 }

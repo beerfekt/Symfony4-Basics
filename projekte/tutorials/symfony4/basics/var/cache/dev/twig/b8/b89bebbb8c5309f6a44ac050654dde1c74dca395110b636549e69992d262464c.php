@@ -66,6 +66,6 @@ class __TwigTemplate_324344d5706c0ef33be3c86c8162435aad872cf87413f9dc37bf15945d4
     public function getSourceContext()
     {
         return new Twig_Source("{% block panel '' %}
-", "@WebProfiler/Profiler/ajax_layout.html.twig", "/home/vagrant/projekte/tutorials/symfony4/basics/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/ajax_layout.html.twig");
+", "@WebProfiler/Profiler/ajax_layout.html.twig", "/vagrant/projekte/tutorials/symfony4/basics/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/ajax_layout.html.twig");
     }
 }

@@ -49,6 +49,6 @@ class __TwigTemplate_01c2c5db71e3910e15665cf239be4f945b3bbffc973999b32c990b8ce8e
     public function getSourceContext()
     {
         return new Twig_Source("<?php echo \$view['form']->block(\$form, 'form_widget_simple', array('type' => isset(\$type) ? \$type : 'tel'));
-", "@Framework/Form/tel_widget.html.php", "/home/vagrant/projekte/tutorials/symfony4/basics/vendor/symfony/framework-bundle/Resources/views/Form/tel_widget.html.php");
+", "@Framework/Form/tel_widget.html.php", "/vagrant/projekte/tutorials/symfony4/basics/vendor/symfony/framework-bundle/Resources/views/Form/tel_widget.html.php");
     }
 }

@@ -27,6 +27,8 @@ class srcDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
         'edit_article' => array(array('id'), array('_controller' => 'App\\Controller\\ArticleController::edit'), array(), array(array('variable', '/', '[^/]++', 'id'), array('text', '/article/edit')), array(), array()),
         'contactbasic' => array(array(), array('_controller' => 'App\\Controller\\ContactController::contactBasic'), array(), array(array('text', '/contact/basic')), array(), array()),
         'contact' => array(array(), array('_controller' => 'App\\Controller\\ContactController::contactValidation'), array(), array(array('text', '/contact')), array(), array()),
+        'login' => array(array(), array('_controller' => 'App\\Controller\\SecurityController::login'), array(), array(array('text', '/login')), array(), array()),
+        'logout' => array(array(), array('_controller' => 'App\\Controller\\SecurityController::logout'), array(), array(array('text', '/logout')), array(), array()),
         'welcome' => array(array(), array('_controller' => 'App\\Controller\\ValueController::index'), array(), array(array('text', '/')), array(), array()),
         'values' => array(array(), array('_controller' => 'App\\Controller\\ValueController::values'), array(), array(array('text', '/values')), array(), array()),
         'persons' => array(array('name'), array('name' => 'default value - testbert', '_controller' => 'App\\Controller\\ValueController::persons'), array('name' => '[A-Za-z]+'), array(array('variable', '/', '[A-Za-z]+', 'name'), array('text', '/persons')), array(), array()),

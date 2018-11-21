@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
  */
@@ -54,9 +55,10 @@ class Article
     }
 
 
-    public function setTitle(string $title)
+    public function setTitle(string $title) : self
     {
         $this->title = $title;
+        return $this;
     }
 
     public function getTitle() :?string
@@ -66,9 +68,10 @@ class Article
 
 
 
-    public function setBody(string $body)
+    public function setBody(string $body) : self
     {
         $this->body = $body;
+        return $this;
     }
 
     public function getBody() : ?string

@@ -976,6 +976,6 @@ class __TwigTemplate_20dbf6fc149364c7dc0ce2adfdf4717fcd4b95629d2f63e960e1b1b3bf0
         </span>
     {%- endif -%}
 {%- endblock form_help %}
-", "bootstrap_3_layout.html.twig", "/home/vagrant/projekte/tutorials/symfony4/basics/vendor/symfony/twig-bridge/Resources/views/Form/bootstrap_3_layout.html.twig");
+", "bootstrap_3_layout.html.twig", "/vagrant/projekte/tutorials/symfony4/basics/vendor/symfony/twig-bridge/Resources/views/Form/bootstrap_3_layout.html.twig");
     }
 }

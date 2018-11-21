@@ -313,6 +313,6 @@ class __TwigTemplate_20bc051588c7b975fa67eafb69641d85d684a1c3deea6776eb09f75f4dd
     {% endif %}
 
 {% endblock %}
-", "@WebProfiler/Profiler/results.html.twig", "/home/vagrant/projekte/tutorials/symfony4/basics/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/results.html.twig");
+", "@WebProfiler/Profiler/results.html.twig", "/vagrant/projekte/tutorials/symfony4/basics/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/results.html.twig");
     }
 }
