@@ -1,0 +1,44 @@
+{% extends '/public/main_nav.html.twig' %}
+
+{% block title %}Contact: Hello {{ controller_name }} !{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+
+      <h1>Kontakt</h1>
+{#
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'src/Controller/ContactController.php'|file_link(0) }}">src/Controller/ContactController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'templates/contact/index.html.twig'|file_link(0) }}">templates/contact/index.html.twig</a></code></li>
+    </ul>
+
+#}
+   {# By applying the Bootstrap Twig form_themes configuration earlier, any fields on our form get nicely aligned and styled when they are rendered.  #}
+
+	{{form_start(our_form)}}
+	{{form_widget(our_form)}}
+	{# Submit Button extra hier, nicht in der Form-Class
+
+	Grund: Formulare ändern sich, und sind mit 
+	dem Submitbutton nicht mehr flexibel/erweiterbar
+	 #}
+	<div class="form-group row">
+    	<div class="col-sm-2"></div>
+    	<div class="col-sm-10">
+        	<input type="submit" value="Send" class="btn btn-success" />
+    	</div>
+	</div>
+	
+	{{form_end(our_form)}}
+
+
+</div>
+{% endblock %}

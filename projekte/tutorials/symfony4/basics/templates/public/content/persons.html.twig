@@ -1,0 +1,31 @@
+
+{# base.html ist übergeordnetes template #}
+{% extends '/public/main_nav.html.twig' %}
+
+
+{% block title %}Persons{% endblock title %}
+
+
+{# body definition ist  teil von base.html.twig, erbt sozusagen #}
+{# body definition wird in ....#}
+{% block body %}
+        <div>
+            <h1>Persons</h1>
+            <p class="lead"> Some Persons are listed here:
+            </p>
+        </div>     
+
+        {# wenn kein somekey aus controller dann default #}
+        <ul>
+            
+            <li>
+                {{ person_name }}
+            </li>
+
+        </ul>
+
+        {# alle eingehenden Werte auslesen#}
+        {#
+            {{ dump() }}
+        #}
+{% endblock %}
