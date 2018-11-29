@@ -37,8 +37,9 @@ class ContactController extends AbstractController
      * @Route("/contact", name="contact")
      */
     public function contactValidation(Request $request,  \Swift_Mailer $mailer)
-    {   
-    	dump($request);
+    {
+        //Daten des Requests ausgeben:
+    	//dump($request);
 
     	//Form erstellen (ContactType ist gleich src/Form/ContactType)
     	$form = $this->createForm(ContactType::class);

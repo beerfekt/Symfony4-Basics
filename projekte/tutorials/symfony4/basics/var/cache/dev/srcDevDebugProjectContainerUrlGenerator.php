@@ -21,11 +21,13 @@ class srcDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
         if (null === self::$declaredRoutes) {
             self::$declaredRoutes = array(
         'public_article_list' => array(array(), array('_controller' => 'App\\Controller\\ArticleController::listArticlesPublic'), array(), array(array('text', '/articles')), array(), array()),
+        'admin_welcome' => array(array(), array('_controller' => 'App\\Controller\\ArticleController::indexOfAdmin'), array(), array(array('text', '/admin')), array(), array()),
         'admin_article_list' => array(array(), array('_controller' => 'App\\Controller\\ArticleController::listArticlesAsAdmin'), array(), array(array('text', '/admin/articles')), array(), array()),
         'admin_article_show' => array(array('id'), array('_controller' => 'App\\Controller\\ArticleController::show'), array(), array(array('variable', '/', '[^/]++', 'id'), array('text', '/admin/articles')), array(), array()),
         'app_article_loescheartikel' => array(array('id'), array('_controller' => 'App\\Controller\\ArticleController::loescheArtikel'), array(), array(array('variable', '/', '[^/]++', 'id'), array('text', '/admin/article/delete')), array(), array()),
         'admin_new_article' => array(array(), array('_controller' => 'App\\Controller\\ArticleController::new'), array(), array(array('text', '/admin/article/new')), array(), array()),
         'admin_edit_article' => array(array('id'), array('_controller' => 'App\\Controller\\ArticleController::edit'), array(), array(array('variable', '/', '[^/]++', 'id'), array('text', '/admin/article/edit')), array(), array()),
+        'benutzerverwaltung' => array(array(), array('_controller' => 'App\\Controller\\BenutzerverwaltungController::index'), array(), array(array('text', '/admin/benutzerverwaltung')), array(), array()),
         'contactbasic' => array(array(), array('_controller' => 'App\\Controller\\ContactController::contactBasic'), array(), array(array('text', '/contact/basic')), array(), array()),
         'contact' => array(array(), array('_controller' => 'App\\Controller\\ContactController::contactValidation'), array(), array(array('text', '/contact')), array(), array()),
         'login' => array(array(), array('_controller' => 'App\\Controller\\SecurityController::login'), array(), array(array('text', '/login')), array(), array()),

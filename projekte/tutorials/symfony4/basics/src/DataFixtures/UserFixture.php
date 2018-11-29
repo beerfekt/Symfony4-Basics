@@ -31,14 +31,34 @@ class UserFixture extends Fixture
 
         //Create your user-object
         $user = new User();
-        $user->setUsername('admin');
+        $user->setUsername('root');
         $user->setPassword(
             //encode the password
             $this->encoder->encodePassword($user, '0000')
         );
-        $user->setEmail('pommes@bu.de');
+        $user->setEmail('wurst@bu.de');
+        $user->setRoles( ['ROLE_ADMIN'] );
+        $user->addRole('ROLE_SUPER_ADMIN');
 
         $manager->persist($user);
         $manager->flush();
+
+
+
+
+        //Create your user-object
+        $user = new User();
+        $user->setUsername('admin');
+        $user->setPassword(
+        //encode the password
+            $this->encoder->encodePassword($user, '1111')
+        );
+        $user->setEmail('pommes@bu.de');
+        $user->setRoles(['ROLE_ADMIN']);
+
+        $manager->persist($user);
+        $manager->flush();
+
+
     }
 }

@@ -76,7 +76,7 @@ class __TwigTemplate_b14046f41bb157e9c7a343065817854b679bb77da4ddc176c0f55cd34ef
 </style>
 
 
-";
+                        ";
         // line 14
         echo "
 
@@ -87,13 +87,15 @@ class __TwigTemplate_b14046f41bb157e9c7a343065817854b679bb77da4ddc176c0f55cd34ef
 
 
 
-";
-        // line 33
+
+
+
+
+                            ";
+        // line 37
         echo "
 
-
-
-<!-- Bootstrap Loginpage -->
+    <!-- Bootstrap Loginpage -->
 
 
     <div class=\"container loginbox\" id=\"testest\">
@@ -104,13 +106,13 @@ class __TwigTemplate_b14046f41bb157e9c7a343065817854b679bb77da4ddc176c0f55cd34ef
             <div class=\"col-md-4\">
                 <section class=\"login-form\">
                     <form method=\"post\" action=\"";
-        // line 47
+        // line 49
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
         echo "\" role=\"login\">
                         <img src=\"http://i.imgur.com/RcmcLv4.png\" class=\"img-responsive\" alt=\"\" />
                         <input type=\"text\" name=\"_username\" placeholder=\"Username here ..\" required class=\"form-control input-lg\" value=\"";
-        // line 49
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new Twig_Error_Runtime('Variable "last_username" does not exist.', 49, $this->source); })()), "html", null, true);
+        // line 51
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new Twig_Error_Runtime('Variable "last_username" does not exist.', 51, $this->source); })()), "html", null, true);
         echo "\" />
 
                         <input type=\"password\" name=\"_password\"  class=\"form-control input-lg\" id=\"password\" placeholder=\"Password\" required=\"\" />
@@ -126,7 +128,7 @@ class __TwigTemplate_b14046f41bb157e9c7a343065817854b679bb77da4ddc176c0f55cd34ef
 
                     </form>
 ";
-        // line 68
+        // line 70
         echo "                </section>
             </div>
 
@@ -135,7 +137,7 @@ class __TwigTemplate_b14046f41bb157e9c7a343065817854b679bb77da4ddc176c0f55cd34ef
 
         </div>
 ";
-        // line 83
+        // line 85
         echo "
     </div>
 
@@ -143,10 +145,10 @@ class __TwigTemplate_b14046f41bb157e9c7a343065817854b679bb77da4ddc176c0f55cd34ef
 
 
     ";
-        // line 90
+        // line 92
         echo "
     ";
-        // line 98
+        // line 100
         echo "
 
 ";
@@ -170,7 +172,7 @@ class __TwigTemplate_b14046f41bb157e9c7a343065817854b679bb77da4ddc176c0f55cd34ef
 
     public function getDebugInfo()
     {
-        return array (  150 => 98,  147 => 90,  139 => 83,  130 => 68,  113 => 49,  108 => 47,  92 => 33,  86 => 28,  81 => 14,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
+        return array (  152 => 100,  149 => 92,  141 => 85,  132 => 70,  115 => 51,  110 => 49,  96 => 37,  86 => 28,  81 => 14,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -187,7 +189,7 @@ class __TwigTemplate_b14046f41bb157e9c7a343065817854b679bb77da4ddc176c0f55cd34ef
 </style>
 
 
-{# login - minimalised #}
+                        {# login - minimalised #}
 
 
 
@@ -206,12 +208,14 @@ class __TwigTemplate_b14046f41bb157e9c7a343065817854b679bb77da4ddc176c0f55cd34ef
 
 
 
-{# login - fancy #}
 
 
 
 
-<!-- Bootstrap Loginpage -->
+                            {# login - fancy #}
+
+
+    <!-- Bootstrap Loginpage -->
 
 
     <div class=\"container loginbox\" id=\"testest\">

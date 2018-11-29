@@ -38,7 +38,16 @@ class User implements UserInterface /* , \Serializable  */
     private $email;
 
 
+    /**
+     * @ORM\Column(type="string", length=30, unique=true)
+     */
 
+
+
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $roles = [];
 
 
     //Getters and Setters
@@ -83,25 +92,64 @@ class User implements UserInterface /* , \Serializable  */
         return $this;
     }
 
+    //Role
+    //wichtig -> nur zur ausgabe
 
+    public function getRole(int $i) : string
+    {
+        return substr($this->roles[$i],5);
+    }
+
+    //Role
     //User Interface implementation:
+    //Funktion wichtig für Login!
 
     public function getRoles() :array
     {
-        return [
-            'ROLE_USER'
-        ];
+        return $this->roles;
     }
 
 
+    public function setRoles(array $newRoles = ['ROLE_USER']) :void
+    {
+            $this->roles = $newRoles;  // [] == array()
+    }
+
+
+    //TODO: Testing addRole
+    public function addRole(string $newRole ='ROLE_USER') :void
+    {
+
+        $sizeOfRoles = sizeof($this->roles);
+        $newSize = $sizeOfRoles+1;
+
+        if ( $sizeOfRoles == 0 ) {
+            $this->roles[0] = $newRole;
+        } else {
+            //Neuen Array der einen weiteren freien slot hat erstellen
+            $newRoles = array($newSize);
+
+            //Diesen mit altem befüllen
+            for ($i=0; $i< $sizeOfRoles; $i++)
+            {
+                $newRoles[$i] = $this->roles[$i];
+            }
+
+            //die letzte Stelle mit der neuen Rolle befüllen
+            $newRoles[$newSize-1] = $newRole;
+
+            //neuen Array in User abspeichern
+            $this->roles = $newRoles;
+        }
+
+    }
 
     public function getSalt(){}
 
-    public function eraseCredentials(){
+    public function eraseCredentials(){}
 
-    }
 
-    //serialize wird irgendwie nicht benötigt? kein fehler? checken!
+    //TODO: serialize wird irgendwie nicht benötigt, ist aber teil des Tutorials? kein fehler? checken!
 
     /*
 

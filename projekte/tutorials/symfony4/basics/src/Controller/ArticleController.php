@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Article;
+use App\Entity\User;
 
 use Doctrine\DBAL\Schema\View;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -31,8 +32,12 @@ class ArticleController extends AbstractController
      */
     public function listArticlesPublic() : Response
     {
+
         //Fetch all articles
         $articles = $this->getDoctrine()->getRepository(Article::class)->findAll();
+
+
+
 
         return $this->render(
             '/public/articles/index.html.twig',
@@ -46,7 +51,40 @@ class ArticleController extends AbstractController
 
 
 
+
+
+
     //ADMIN BEREICH:
+
+    /**
+     * @Route("/admin", name="admin_welcome")
+     */
+    public function indexOfAdmin(Request $request) : Response
+    {
+
+        $user = $this->getDoctrine()->getRepository(User::class)->findOneBy(
+                    ['username' => 'admin']
+        );
+
+
+
+        //Fetch all articles
+        $articles = $this->getDoctrine()->getRepository(Article::class)->findAll();
+
+
+
+        return $this->render(
+            '/admin/welcome/index.html.twig',
+            [
+                'controller_name' => 'ArticleController',
+                'articles' => $articles,
+                'user'     => $user
+            ]
+        );
+    }//index()
+
+
+
 
 
     /**
@@ -202,7 +240,7 @@ class ArticleController extends AbstractController
 
 
     //Form erstellen
-    protected function erstelleForm(string $buttonLabel, Article $article):Form
+    protected function erstelleForm(string $buttonLabel, Article $article) :Form
     {
 
         $formControl = array('class' => 'form-control');

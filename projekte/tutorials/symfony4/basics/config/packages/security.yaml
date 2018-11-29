@@ -1,12 +1,14 @@
 security:
     encoders:
         App\Entity\User:
-            algorithm: bcrypt
+            algorithm: argon2i  #wird von Symfony empfohlen statt bcrypt
+
     providers:
         my_provider:
             entity:
                 class: App\Entity\User
                 property: username
+
     firewalls:
         #dev = fake firewall, verhindert nur dass man dev tools nicht zerschießt
         dev:
@@ -20,7 +22,7 @@ security:
                 login_path: login   #loginname for self created SecurityController
                 check_path: login
                 provider: my_provider
-                default_target_path: admin_article_list
+                default_target_path: admin_welcome
             logout:
                 path: /logout
                 target: /
@@ -28,5 +30,12 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-         - { path: ^/admin, roles: ROLE_USER } #only user could access the articles for example
+         - { path: ^/admin, roles: ROLE_ADMIN }  #ROLE_ fest definiert, alles danach frei erfindbar
+        # - { path: ^/admin/, roles: ROLE_SUPER_ADMIN } #only user could access the articles for example
+                                                # if you write /admin -> it disables also /adminbla/etc.
+                                                # like : /admin*
+
+                                                #disabling admin folder:
+                                                # /admin/    -> now you can use also /admin-login etc.
+
+     #//TODO: MEhrere Nutzer die auf diesen PFad gehen können???

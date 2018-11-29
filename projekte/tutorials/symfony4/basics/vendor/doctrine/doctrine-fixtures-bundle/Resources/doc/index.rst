@@ -16,6 +16,11 @@ following command to download the latest stable version of this bundle:
 
     composer require --dev doctrine/doctrine-fixtures-bundle
 
+.. tip::
+
+    If you are using flex you just need to do:
+    ``composer req --dev orm-fixtures``
+    
 If you're *not* using Symfony Flex (i.e. Symfony 3 and lower), you will
 also need to enable the bundle in your ``AppKernel`` class:
 
@@ -25,7 +30,7 @@ also need to enable the bundle in your ``AppKernel`` class:
 
     // ...
     // registerBundles()
-    if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
+    if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
         // ...
         $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
     }
@@ -158,14 +163,16 @@ exact same object via its name:
     // ...
     class UserFixtures extends Fixture
     {
+        public const ADMIN_USER_REFERENCE = 'admin-user';
+
         public function load(ObjectManager $manager)
         {
             $userAdmin = new User('admin', 'pass_1234');
             $manager->persist($userAdmin);
             $manager->flush();
 
-            // other fixtures can get this object using the 'admin-user' name
-            $this->addReference('admin-user', $userAdmin);
+            // other fixtures can get this object using the UserFixtures::ADMIN_USER_REFERENCE constant
+            $this->addReference(self::ADMIN_USER_REFERENCE, $userAdmin);
         }
     }
 
@@ -177,7 +184,7 @@ exact same object via its name:
         {
             $userGroup = new Group('administrators');
             // this reference returns the User object created in UserFixtures
-            $userGroup->addUser($this->getReference('admin-user'));
+            $userGroup->addUser($this->getReference(UserFixtures::ADMIN_USER_REFERENCE));
 
             $manager->persist($userGroup);
             $manager->flush();
@@ -234,6 +241,6 @@ an array of the fixture classes that must be loaded before this one:
         }
     }
 
-.. _`ORM`: http://symfony.com/doc/current/doctrine.html
+.. _`ORM`: https://symfony.com/doc/current/doctrine.html
 .. _`installation chapter`: https://getcomposer.org/doc/00-intro.md
 .. _`default service configuration`: https://symfony.com/doc/current/service_container.html#service-container-services-load-example

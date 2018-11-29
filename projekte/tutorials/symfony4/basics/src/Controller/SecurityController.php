@@ -13,6 +13,10 @@ class SecurityController extends AbstractController
 
     //the route is configured in: config/packages/security.yaml
 
+
+    //Darf nicht mit /admin ... anfangen da sonst Probleme mit security config entstehen
+    // weil folgender bereich der mit /admin anfängt nur im eingeloggten zustand erreicht werden darf
+
     /**
      * @Route("/login", name="login")
      */

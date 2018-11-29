@@ -1,6 +1,6 @@
 <?php
 
-/* /admin/articles/edit.html.twig */
+/* admin/articles/edit.html.twig */
 class __TwigTemplate_a60c2fe882e0934993b97276fd5e019c5475a30458a95709ddd58e0554159552 extends Twig_Template
 {
     private $source;
@@ -12,7 +12,7 @@ class __TwigTemplate_a60c2fe882e0934993b97276fd5e019c5475a30458a95709ddd58e05541
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "/admin/articles/edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "admin/articles/edit.html.twig", 1);
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'body' => array($this, 'block_body'),
@@ -27,10 +27,10 @@ class __TwigTemplate_a60c2fe882e0934993b97276fd5e019c5475a30458a95709ddd58e05541
     protected function doDisplay(array $context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "/admin/articles/edit.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/articles/edit.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "/admin/articles/edit.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/articles/edit.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
@@ -101,7 +101,7 @@ class __TwigTemplate_a60c2fe882e0934993b97276fd5e019c5475a30458a95709ddd58e05541
 
     public function getTemplateName()
     {
-        return "/admin/articles/edit.html.twig";
+        return "admin/articles/edit.html.twig";
     }
 
     public function isTraitable()
@@ -131,6 +131,6 @@ Datenbank - Artikel editieren
 {{ form_end(form) }}    <!-- endtag -->
 <hr>
 <a href=\"{{ path('admin_article_list') }}\" >Go Back</a>
-{% endblock %}", "/admin/articles/edit.html.twig", "/home/vagrant/projekte/tutorials/symfony4/basics/templates/admin/articles/edit.html.twig");
+{% endblock %}", "admin/articles/edit.html.twig", "/home/vagrant/projekte/tutorials/symfony4/basics/templates/admin/articles/edit.html.twig");
     }
 }

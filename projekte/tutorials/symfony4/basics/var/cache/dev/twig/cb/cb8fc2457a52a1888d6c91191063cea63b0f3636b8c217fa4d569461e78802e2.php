@@ -69,6 +69,12 @@ class __TwigTemplate_6553e71daac81dcd34efdbc07d2159dbd98df8296d4e7de55674b51f30c
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"";
         // line 16
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("benutzerverwaltung");
+        echo "\">Benutzerverwaltung</a>
+                    </li>
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"";
+        // line 19
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
         echo "\" >Logout</a>
                     </li>
@@ -97,7 +103,7 @@ class __TwigTemplate_6553e71daac81dcd34efdbc07d2159dbd98df8296d4e7de55674b51f30c
 
     public function getDebugInfo()
     {
-        return array (  72 => 16,  66 => 13,  57 => 8,  53 => 5,  44 => 4,  15 => 1,);
+        return array (  78 => 19,  72 => 16,  66 => 13,  57 => 8,  53 => 5,  44 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -115,6 +121,9 @@ class __TwigTemplate_6553e71daac81dcd34efdbc07d2159dbd98df8296d4e7de55674b51f30c
                 <ul class=\"navbar-nav mr-auto\">
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"{{path('admin_article_list')}}\"  >Articles</a>
+                    </li>
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"{{ path('benutzerverwaltung') }}\">Benutzerverwaltung</a>
                     </li>
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"{{ path('logout') }}\" >Logout</a>
