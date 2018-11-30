@@ -11,6 +11,5 @@ include_once $this->targetDirs[3].'/vendor/doctrine/collections/lib/Doctrine/Com
 include_once $this->targetDirs[3].'/vendor/doctrine/orm/lib/Doctrine/ORM/EntityRepository.php';
 include_once $this->targetDirs[3].'/vendor/doctrine/doctrine-bundle/Repository/ServiceEntityRepositoryInterface.php';
 include_once $this->targetDirs[3].'/vendor/doctrine/doctrine-bundle/Repository/ServiceEntityRepository.php';
-include_once $this->targetDirs[3].'/src/Repository/UserRepository.php';
 
 return $this->privates['App\Repository\UserRepository'] = new \App\Repository\UserRepository(($this->services['doctrine'] ?? $this->getDoctrineService()));

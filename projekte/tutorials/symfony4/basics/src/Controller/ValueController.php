@@ -29,7 +29,10 @@ class ValueController extends AbstractController
         //GET aus adresszeile: http://symfony-tutorial.test/values?name=test
     	$nameFromRequest = $request->query->get('name');
 
-    	//return array and render template:
+
+
+
+        //return array and render template:
         return $this->render(
         	'/public/content/values.html.twig',
         	['nameForTwig'=>'value received in the ValueController, passed from the url via GET: ' . $nameFromRequest,

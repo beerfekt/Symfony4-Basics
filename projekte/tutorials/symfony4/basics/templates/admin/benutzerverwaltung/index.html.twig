@@ -12,7 +12,7 @@
 {% block body %}
 
 
-    <h1>Benutzer bearbeiten:  </h1>
+    <h1>Benutzerverwaltung:  </h1>
     <p>Gelistete Benutzer bearbeiten </p>
     {# if there are articles delivered from the admin zone... #}
     {% if users %}
@@ -26,13 +26,18 @@
             </thead>
             <tbody>
             {# loop through the $articles (in ArticleController.php) and show them #}
+
+
             {%  for user in users %}
                 <tr>
                     <td>
                         {{ user.username  | default('NO username received ') }}
                     </td>
                     <td>
-                        {{ user.role  | default('NO role received ') }}
+                        {# Rollen auslesen #}
+                        {%  for role in user.roles %}
+                            {{ role | default('NO category set') }}
+                        {%  endfor %}
                     </td>
                     <td>
                         <a  href="/admin/benutzerverwaltung/{{ user.id }}" class="btn btn-dark">Details</a>

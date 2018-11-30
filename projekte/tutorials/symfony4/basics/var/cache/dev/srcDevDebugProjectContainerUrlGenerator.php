@@ -30,6 +30,7 @@ class srcDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
         'benutzerverwaltung' => array(array(), array('_controller' => 'App\\Controller\\BenutzerverwaltungController::index'), array(), array(array('text', '/admin/benutzerverwaltung')), array(), array()),
         'contactbasic' => array(array(), array('_controller' => 'App\\Controller\\ContactController::contactBasic'), array(), array(array('text', '/contact/basic')), array(), array()),
         'contact' => array(array(), array('_controller' => 'App\\Controller\\ContactController::contactValidation'), array(), array(array('text', '/contact')), array(), array()),
+        'produkte' => array(array(), array('_controller' => 'App\\Controller\\ProductController::index'), array(), array(array('text', '/produkte')), array(), array()),
         'login' => array(array(), array('_controller' => 'App\\Controller\\SecurityController::login'), array(), array(array('text', '/login')), array(), array()),
         'logout' => array(array(), array('_controller' => 'App\\Controller\\SecurityController::logout'), array(), array(array('text', '/logout')), array(), array()),
         'welcome' => array(array(), array('_controller' => 'App\\Controller\\ValueController::index'), array(), array(array('text', '/')), array(), array()),

@@ -1,0 +1,39 @@
+{% extends '/public/main_nav.html.twig' %}
+
+{% block title %}
+    Produkte  {{ app.request.query.get('name') | default('CodeReviewVideos') }}!
+{% endblock title %}
+
+{% block body %}
+        <div>
+            <h1>Produkte: </h1>
+            <p class="lead">1(Kategorie):n(Produkt) Beziehung </p>Alle <i>(Produkte -> zugeordnete Kategorien)</i>
+        </div>     
+
+
+        <ul>
+            {%  for produkt in produkte %}
+            <li>
+                <strong>{{ produkt.name | default('NO Produktname set') }} </strong> [
+                {{ produkt.category.name | default('NO category set') }} ]
+            </li>
+            {% endfor %}
+        </ul>
+
+
+    Holz:<i>(Categorie -> zugeordneten Produkten)</i>
+
+    <ul>
+        {%  for holzprodukt in holzprodukte %}
+            <li>
+                <strong>{{ holzprodukt.name | default('NO Produktname set') }} </strong> [
+                {{ holzprodukt.category.name | default('NO category set') }} ]
+            </li>
+        {% endfor %}
+    </ul>
+
+
+
+
+
+{% endblock %}

@@ -36,9 +36,6 @@ class ArticleController extends AbstractController
         //Fetch all articles
         $articles = $this->getDoctrine()->getRepository(Article::class)->findAll();
 
-
-
-
         return $this->render(
             '/public/articles/index.html.twig',
             [
@@ -62,11 +59,8 @@ class ArticleController extends AbstractController
     public function indexOfAdmin(Request $request) : Response
     {
 
-        $user = $this->getDoctrine()->getRepository(User::class)->findOneBy(
-                    ['username' => 'admin']
-        );
 
-
+        $user = $this->getUser();
 
         //Fetch all articles
         $articles = $this->getDoctrine()->getRepository(Article::class)->findAll();
@@ -103,7 +97,6 @@ class ArticleController extends AbstractController
             ]
         );
     }//index()
-
 
 
 
@@ -261,6 +254,18 @@ class ArticleController extends AbstractController
 
         return $form;
     }
+
+
+
+
+
+    //TODO: aktuellen nutzer auslesen
+
+
+
+
+
+
 
 }//endof class
 

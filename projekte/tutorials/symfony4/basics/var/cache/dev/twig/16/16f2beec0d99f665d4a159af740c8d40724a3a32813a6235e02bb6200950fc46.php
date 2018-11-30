@@ -74,7 +74,7 @@ class __TwigTemplate_7014e9be1dd2f3e02e5365dc9a9014e9f7eaaf37777ea4ad3fc20610c9b
         // line 13
         echo "
 
-    <h1>Benutzer bearbeiten:  </h1>
+    <h1>Benutzerverwaltung:  </h1>
     <p>Gelistete Benutzer bearbeiten </p>
     ";
         // line 18
@@ -92,35 +92,50 @@ class __TwigTemplate_7014e9be1dd2f3e02e5365dc9a9014e9f7eaaf37777ea4ad3fc20610c9b
             <tbody>
             ";
             // line 29
-            echo "            ";
+            echo "
+
+            ";
+            // line 31
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new Twig_Error_Runtime('Variable "users" does not exist.', 29, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new Twig_Error_Runtime('Variable "users" does not exist.', 31, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-                // line 30
+                // line 32
                 echo "                <tr>
                     <td>
                         ";
-                // line 32
+                // line 34
                 echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, $context["user"], "username", array(), "any", true, true)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, $context["user"], "username", array()), "NO username received ")) : ("NO username received ")), "html", null, true);
                 echo "
                     </td>
                     <td>
                         ";
-                // line 35
-                echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, $context["user"], "role", array(), "any", true, true)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, $context["user"], "role", array()), "NO role received ")) : ("NO role received ")), "html", null, true);
-                echo "
-                    </td>
+                // line 38
+                echo "                        ";
+                $context['_parent'] = $context;
+                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["user"], "roles", array()));
+                foreach ($context['_seq'] as $context["_key"] => $context["role"]) {
+                    // line 39
+                    echo "                            ";
+                    echo twig_escape_filter($this->env, (((isset($context["role"]) || array_key_exists("role", $context))) ? (_twig_default_filter($context["role"], "NO category set")) : ("NO category set")), "html", null, true);
+                    echo "
+                        ";
+                }
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['role'], $context['_parent'], $context['loop']);
+                $context = array_intersect_key($context, $_parent) + $_parent;
+                // line 41
+                echo "                    </td>
                     <td>
                         <a  href=\"/admin/benutzerverwaltung/";
-                // line 38
+                // line 43
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", array()), "html", null, true);
                 echo "\" class=\"btn btn-dark\">Details</a>
                         <a  href=\"/admin/benutzerverwaltung/edit/";
-                // line 39
+                // line 44
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", array()), "html", null, true);
                 echo "\" class = \"btn btn-light\" >Editieren</a>
                         ";
-                // line 45
+                // line 50
                 echo "                        <a  href=\"#\" class = \"btn btn-danger delete-article\" data-id=\"";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", array()), "html", null, true);
                 echo "\"  >Delete</a>
@@ -131,17 +146,17 @@ class __TwigTemplate_7014e9be1dd2f3e02e5365dc9a9014e9f7eaaf37777ea4ad3fc20610c9b
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 49
+            // line 54
             echo "
             </tbody>
         </table>
     ";
         } else {
-            // line 53
+            // line 58
             echo "        <p> No data available! </p>
     ";
         }
-        // line 55
+        // line 60
         echo "
     ";
         
@@ -152,7 +167,7 @@ class __TwigTemplate_7014e9be1dd2f3e02e5365dc9a9014e9f7eaaf37777ea4ad3fc20610c9b
 
     }
 
-    // line 60
+    // line 65
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -161,22 +176,22 @@ class __TwigTemplate_7014e9be1dd2f3e02e5365dc9a9014e9f7eaaf37777ea4ad3fc20610c9b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 61
+        // line 66
         echo "        <script src=";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("node_modules/jquery/dist/jquery.slim.min.js"), "html", null, true);
         echo " type=\"text/javascript\" ></script>
         ";
-        // line 63
+        // line 68
         echo "        <script src=";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("node_modules/bootstrap/dist/js/bootstrap.min.js"), "html", null, true);
         echo " type=\"text/javascript\" ></script>
         ";
-        // line 65
+        // line 70
         echo "        <!-- <script src=";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jquery-test.js"), "html", null, true);
         echo " type=\"text/javascript\" ></script> -->
         <script src=";
-        // line 66
+        // line 71
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/main.js"), "html", null, true);
         echo "></script>
     ";
@@ -200,7 +215,7 @@ class __TwigTemplate_7014e9be1dd2f3e02e5365dc9a9014e9f7eaaf37777ea4ad3fc20610c9b
 
     public function getDebugInfo()
     {
-        return array (  180 => 66,  175 => 65,  170 => 63,  165 => 61,  156 => 60,  145 => 55,  141 => 53,  135 => 49,  124 => 45,  120 => 39,  116 => 38,  110 => 35,  104 => 32,  100 => 30,  95 => 29,  84 => 19,  81 => 18,  75 => 13,  66 => 12,  55 => 5,  46 => 4,  15 => 1,);
+        return array (  195 => 71,  190 => 70,  185 => 68,  180 => 66,  171 => 65,  160 => 60,  156 => 58,  150 => 54,  139 => 50,  135 => 44,  131 => 43,  127 => 41,  118 => 39,  113 => 38,  107 => 34,  103 => 32,  99 => 31,  95 => 29,  84 => 19,  81 => 18,  75 => 13,  66 => 12,  55 => 5,  46 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -219,7 +234,7 @@ class __TwigTemplate_7014e9be1dd2f3e02e5365dc9a9014e9f7eaaf37777ea4ad3fc20610c9b
 {% block body %}
 
 
-    <h1>Benutzer bearbeiten:  </h1>
+    <h1>Benutzerverwaltung:  </h1>
     <p>Gelistete Benutzer bearbeiten </p>
     {# if there are articles delivered from the admin zone... #}
     {% if users %}
@@ -233,13 +248,18 @@ class __TwigTemplate_7014e9be1dd2f3e02e5365dc9a9014e9f7eaaf37777ea4ad3fc20610c9b
             </thead>
             <tbody>
             {# loop through the \$articles (in ArticleController.php) and show them #}
+
+
             {%  for user in users %}
                 <tr>
                     <td>
                         {{ user.username  | default('NO username received ') }}
                     </td>
                     <td>
-                        {{ user.role  | default('NO role received ') }}
+                        {# Rollen auslesen #}
+                        {%  for role in user.roles %}
+                            {{ role | default('NO category set') }}
+                        {%  endfor %}
                     </td>
                     <td>
                         <a  href=\"/admin/benutzerverwaltung/{{ user.id }}\" class=\"btn btn-dark\">Details</a>

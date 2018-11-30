@@ -50,7 +50,7 @@ class __TwigTemplate_139a202af10ece0322619de351ebba37debb8cea737b4df09f79c59004a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "main_nav"));
 
         // line 5
-        echo "    <nav class=\"navbar navbar-expand-sm navbar-dark bg-dark\">
+        echo "    <nav class=\"navbar navbar-expand-sm navbar-dark bg-primary\"   >
         <div class=\"container\">
             ";
         // line 8
@@ -70,8 +70,8 @@ class __TwigTemplate_139a202af10ece0322619de351ebba37debb8cea737b4df09f79c59004a
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"";
         // line 17
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("persons");
-        echo "\"  >Persons</a>
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produkte");
+        echo "\"  >Produkte</a>
                     </li>
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"";
@@ -119,7 +119,7 @@ class __TwigTemplate_139a202af10ece0322619de351ebba37debb8cea737b4df09f79c59004a
 
 
 {% block main_nav %}
-    <nav class=\"navbar navbar-expand-sm navbar-dark bg-dark\">
+    <nav class=\"navbar navbar-expand-sm navbar-dark bg-primary\"   >
         <div class=\"container\">
             {# path() -> name des controllers (hier welcome) #}
             <a class=\"navbar-brand\" href=\"{{ path('welcome') }}\">Home</a>
@@ -131,7 +131,7 @@ class __TwigTemplate_139a202af10ece0322619de351ebba37debb8cea737b4df09f79c59004a
                         <a class=\"nav-link\" href=\"{{path('values')}}\"  >Values</a>
                     </li>
                     <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"{{path('persons')}}\"  >Persons</a>
+                        <a class=\"nav-link\" href=\"{{path('produkte')}}\"  >Produkte</a>
                     </li>
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"{{path('contact')}}\"  >Contact</a>

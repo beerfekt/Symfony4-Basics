@@ -16,6 +16,6 @@ if (!\class_exists(srcProdProjectContainer::class, false)) {
 
 return new \ContainerKtxUzba\srcProdProjectContainer(array(
     'container.build_hash' => 'KtxUzba',
-    'container.build_id' => 'b7eb13be',
-    'container.build_time' => 1543417244,
+    'container.build_id' => '5560ec56',
+    'container.build_time' => 1543485603,
 ), __DIR__.\DIRECTORY_SEPARATOR.'ContainerKtxUzba');

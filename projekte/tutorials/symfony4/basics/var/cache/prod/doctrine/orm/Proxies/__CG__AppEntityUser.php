@@ -64,10 +64,10 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'username', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'role'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'username', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'username', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'role'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'username', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles'];
     }
 
     /**
@@ -257,12 +257,12 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getRole(): string
+    public function getRole(int $i): string
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getRole', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getRole', [$i]);
 
-        return parent::getRole();
+        return parent::getRole($i);
     }
 
     /**
@@ -279,12 +279,25 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function setRoles(string $role = 'USER'): void
+    public function setRoles(array $newRoles = array (
+  0 => 'ROLE_USER',
+)): void
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setRoles', [$role]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setRoles', [$newRoles]);
 
-        parent::setRoles($role);
+        parent::setRoles($newRoles);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addRole(string $newRole = 'ROLE_USER'): void
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addRole', [$newRole]);
+
+        parent::addRole($newRole);
     }
 
     /**

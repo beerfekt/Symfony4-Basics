@@ -55,8 +55,8 @@ class __TwigTemplate_6553e71daac81dcd34efdbc07d2159dbd98df8296d4e7de55674b51f30c
             ";
         // line 8
         echo "            <a class=\"navbar-brand\" href=\"";
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("welcome");
-        echo "\">Public Bereich</a>
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_welcome");
+        echo "\">Interner Bereich</a>
 
             <div class=\"collapse navbar-collapse\">
                 <ul class=\"navbar-nav mr-auto\">
@@ -115,7 +115,7 @@ class __TwigTemplate_6553e71daac81dcd34efdbc07d2159dbd98df8296d4e7de55674b51f30c
     <nav class=\"navbar navbar-expand-sm navbar-dark bg-dark\">
         <div class=\"container\">
             {# path() -> name des controllers (hier welcome) #}
-            <a class=\"navbar-brand\" href=\"{{ path('welcome') }}\">Public Bereich</a>
+            <a class=\"navbar-brand\" href=\"{{ path('admin_welcome') }}\">Interner Bereich</a>
 
             <div class=\"collapse navbar-collapse\">
                 <ul class=\"navbar-nav mr-auto\">

@@ -71,6 +71,7 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     '/admin/benutzerverwaltung' => array(array('_route' => 'benutzerverwaltung', '_controller' => 'App\\Controller\\BenutzerverwaltungController::index'), null, null, null),
                     '/contact/basic' => array(array('_route' => 'contactbasic', '_controller' => 'App\\Controller\\ContactController::contactBasic'), null, null, null),
                     '/contact' => array(array('_route' => 'contact', '_controller' => 'App\\Controller\\ContactController::contactValidation'), null, null, null),
+                    '/produkte' => array(array('_route' => 'produkte', '_controller' => 'App\\Controller\\ProductController::index'), null, null, null),
                     '/login' => array(array('_route' => 'login', '_controller' => 'App\\Controller\\SecurityController::login'), null, null, null),
                     '/logout' => array(array('_route' => 'logout', '_controller' => 'App\\Controller\\SecurityController::logout'), null, null, null),
                     '/' => array(array('_route' => 'welcome', '_controller' => 'App\\Controller\\ValueController::index'), null, null, null),

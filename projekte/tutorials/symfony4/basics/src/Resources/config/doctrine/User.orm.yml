@@ -1,0 +1,9 @@
+App\Entity\User:
+  type: entity
+  # ...
+  manyToOne:
+    rolle:
+      targetEntity: App\Entity\Rolle
+      inversedBy: users
+      joinColumn:
+        nullable: false

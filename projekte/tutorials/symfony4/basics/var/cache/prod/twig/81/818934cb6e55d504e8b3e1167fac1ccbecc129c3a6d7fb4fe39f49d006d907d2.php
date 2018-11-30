@@ -89,57 +89,63 @@ class __TwigTemplate_67a8b209ae20992f66a1be19e0c97d0a6b3f0a95a5ca001f7f9ad0d542c
                     echo "\" class = \"btn btn-light\" >Edit</a>
                         ";
                     // line 43
-                    echo "                        <a  href=\"#\" class = \"btn btn-danger delete-article\" data-id=\"";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", array()), "html", null, true);
-                    echo "\"  >Delete</a>
-                    </td>
+                    echo "                        ";
+                    if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_SUPER_ADMIN")) {
+                        // line 44
+                        echo "                            <a  href=\"#\" class = \"btn btn-danger delete-article\" data-id=\"";
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", array()), "html", null, true);
+                        echo "\"  >Delete</a>
+                        ";
+                    }
+                    // line 46
+                    echo "                    </td>
                     ";
                 }
-                // line 46
+                // line 48
                 echo "                </tr>
             ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 48
+            // line 50
             echo "
             </tbody>
         </table>
     ";
         } else {
-            // line 52
+            // line 54
             echo "        <p> No data available! </p>
     ";
         }
-        // line 54
+        // line 56
         echo "
     <a class = \"btn btn-primary\" href= \"";
-        // line 55
+        // line 57
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_new_article");
         echo "\"  >New</a>
 ";
     }
 
-    // line 59
+    // line 61
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 60
+        // line 62
         echo "        <script src=";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("node_modules/jquery/dist/jquery.slim.min.js"), "html", null, true);
         echo " type=\"text/javascript\" ></script>
         ";
-        // line 62
+        // line 64
         echo "        <script src=";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("node_modules/bootstrap/dist/js/bootstrap.min.js"), "html", null, true);
         echo " type=\"text/javascript\" ></script>
         ";
-        // line 64
+        // line 66
         echo "        <!-- <script src=";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jquery-test.js"), "html", null, true);
         echo " type=\"text/javascript\" ></script> -->
         <script src=";
-        // line 65
+        // line 67
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/main.js"), "html", null, true);
         echo "></script>
     ";
@@ -157,7 +163,7 @@ class __TwigTemplate_67a8b209ae20992f66a1be19e0c97d0a6b3f0a95a5ca001f7f9ad0d542c
 
     public function getDebugInfo()
     {
-        return array (  143 => 65,  138 => 64,  133 => 62,  128 => 60,  125 => 59,  119 => 55,  116 => 54,  112 => 52,  106 => 48,  99 => 46,  92 => 43,  88 => 37,  84 => 36,  81 => 35,  79 => 34,  74 => 32,  69 => 29,  64 => 28,  54 => 19,  51 => 18,  45 => 13,  42 => 12,  37 => 5,  34 => 4,  15 => 1,);
+        return array (  149 => 67,  144 => 66,  139 => 64,  134 => 62,  131 => 61,  125 => 57,  122 => 56,  118 => 54,  112 => 50,  105 => 48,  101 => 46,  95 => 44,  92 => 43,  88 => 37,  84 => 36,  81 => 35,  79 => 34,  74 => 32,  69 => 29,  64 => 28,  54 => 19,  51 => 18,  45 => 13,  42 => 12,  37 => 5,  34 => 4,  15 => 1,);
     }
 
     public function getSourceContext()

@@ -13,14 +13,10 @@ class BenutzerverwaltungController extends AbstractController
      */
     public function index()
     {
+        $users = $this->getDoctrine()
+                      ->getRepository(User::class)
+                      ->findAll();
 
-        $users = $this->getDoctrine()->getRepository(User::class)->findAll();
-
-        $admin = $this->getDoctrine()->getRepository(User::class)->findOneBy(
-            ['username'=>'admin']
-        );
-
-        echo ($admin->getRoles()['role']);
 
         return $this->render('admin/benutzerverwaltung/index.html.twig', [
             'users' => $users,

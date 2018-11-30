@@ -2,18 +2,15 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
-
-
-//Security Settings are in :
-//     projekte/.. ../basics/config/packages/security.yaml
-
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User implements UserInterface /* , \Serializable  */
+class User implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -23,34 +20,29 @@ class User implements UserInterface /* , \Serializable  */
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=50, unique=true)
+     * @ORM\Column(type="string", length=50)
      */
     private $username;
 
     /**
-     * @ORM\Column(type="string", length=200, unique=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=50, unique=true)
+     * @ORM\Column(type="string", length=50)
      */
     private $email;
 
-
     /**
-     * @ORM\Column(type="string", length=30, unique=true)
+     * @ORM\ManyToMany(targetEntity="App\Entity\Rolle", inversedBy="users")
      */
+    private $roles;
 
-
-
-    /**
-     * @ORM\Column(type="json")
-     */
-    private $roles = [];
-
-
-    //Getters and Setters
+    public function __construct()
+    {
+        $this->roles = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -77,6 +69,7 @@ class User implements UserInterface /* , \Serializable  */
     public function setPassword(string $password): self
     {
         $this->password = $password;
+
         return $this;
     }
 
@@ -92,88 +85,50 @@ class User implements UserInterface /* , \Serializable  */
         return $this;
     }
 
-    //Role
-    //wichtig -> nur zur ausgabe
+    //  @return Collection|Rolle[]
 
-    public function getRole(int $i) : string
-    {
-        return substr($this->roles[$i],5);
-    }
-
-    //Role
-    //User Interface implementation:
-    //Funktion wichtig für Login!
-
-    public function getRoles() :array
-    {
-        return $this->roles;
-    }
-
-
-    public function setRoles(array $newRoles = ['ROLE_USER']) :void
-    {
-            $this->roles = $newRoles;  // [] == array()
-    }
-
-
-    //TODO: Testing addRole
-    public function addRole(string $newRole ='ROLE_USER') :void
+    /**
+     * @return (Role|string)[]
+     */
+    public function getRoles():array
     {
 
-        $sizeOfRoles = sizeof($this->roles);
-        $newSize = $sizeOfRoles+1;
+        //TODO: collection Frimmelei noch dokumentieren!
+        $collection = $this->roles;
+        $array = $collection->toArray();
+        $anzahlRollen = sizeof($array);
+        dump($array);
 
-        if ( $sizeOfRoles == 0 ) {
-            $this->roles[0] = $newRole;
-        } else {
-            //Neuen Array der einen weiteren freien slot hat erstellen
-            $newRoles = array($newSize);
+        $rolesAsStrings = array($anzahlRollen);
 
-            //Diesen mit altem befüllen
-            for ($i=0; $i< $sizeOfRoles; $i++)
-            {
-                $newRoles[$i] = $this->roles[$i];
-            }
-
-            //die letzte Stelle mit der neuen Rolle befüllen
-            $newRoles[$newSize-1] = $newRole;
-
-            //neuen Array in User abspeichern
-            $this->roles = $newRoles;
+        for ($i = 0; $i < $anzahlRollen; $i++)
+        {
+            $rolesAsStrings[$i] = $array[$i]->getBezeichnung();
         }
 
+        return $rolesAsStrings;
     }
+
+    public function addRoles(Rolle $rolle): self
+    {
+        if (!$this->roles->contains($rolle)) {
+            $this->roles[] = $rolle;
+        }
+
+        return $this;
+    }
+
+    public function removeRoles(Rolle $rolle): self
+    {
+        if ($this->roles->contains($rolle)) {
+            $this->roles->removeElement($rolle);
+        }
+        return $this;
+    }
+
 
     public function getSalt(){}
 
     public function eraseCredentials(){}
-
-
-    //TODO: serialize wird irgendwie nicht benötigt, ist aber teil des Tutorials? kein fehler? checken!
-
-    /*
-
-    public function serialize()
-    {
-        return serialize(
-            [ $this->id,
-              $this->username,
-              $this->email,
-              $this->password  ]
-        );
-    }
-
-
-    public function unserialize()
-    {
-        list (
-             $this->id,
-             $this->username,
-             $this->email,
-             $this->password
-        ) = $this->unserialize($string, ['allowed_classes' => false]);
-    }
-
-       */
 
 }
