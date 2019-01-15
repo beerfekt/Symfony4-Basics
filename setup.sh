@@ -1,7 +1,7 @@
 #!/bin/bash
 
 INFOURL=symfony4-basics.info
-PROJECTURL=symfony-tutorial.test
+PROJECTURL=symfony4-basics.test
 
 echo ""
 echo ""

@@ -73,6 +73,10 @@ Getting started with Symfony4
     
 2. After destroying vagrant box:  
   
+  a)destroy vagrant box:
+    vagrant destroy
+  
+  b)/etc/hosts  
   //remove entries from the /etc/hosts file!  
   homestead.info
   symfony-tutorial.test

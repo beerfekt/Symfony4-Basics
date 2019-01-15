@@ -27,7 +27,7 @@ sites:
     - map: symfony4-basics.info
       to:  /home/vagrant/projekte/homestead/public
 
-    - map: symfony-tutorial.test
+    - map: symfony4-basics.test
       to:  /home/vagrant/projekte/symfony4/public
       type: symfony4
 
