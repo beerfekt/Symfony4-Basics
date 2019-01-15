@@ -44,7 +44,7 @@ echo "DONE"
 #testen
 echo "host einträge setzen ... "
 sudo sed -i "2i192.168.10.10 symfony-tutorial.test" /etc/hosts
-sudo sed -i "2i192.168.10.10 homestead.info" /etc/hosts
+sudo sed -i "2i192.168.10.10 symfony4-basics.info" /etc/hosts
 #echo "host einträge setzen ... "
 #sudo -- sh -c -e "echo '192.168.10.10 symfony-tutorial.test' >> /etc/hosts"
 #sudo -- sh -c -e "echo '192.168.10.10 angular-tutorial.test' >> /etc/hosts"
@@ -65,7 +65,7 @@ echo ""
 echo ""
 
 echo "Your Page is available at this address: "
-echo "  PHP Infos:                ----> homestead.info "
+echo "  PHP Infos:                ----> symfony4-basics.info "
 echo "  Symfony tutorial project: ----> symfony-tutorial.test "
 
 

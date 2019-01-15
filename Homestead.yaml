@@ -27,7 +27,7 @@ folders:
 #mapping von lokal homestead.test auf vagrant /home/vagrant/code/public... (siehe lokal etc/hosts)
 sites:
 
-    - map: homestead.info
+    - map: symfony4-basics.info
       to:  /home/vagrant/projekte/homestead/public
 
     - map: symfony-tutorial.test
