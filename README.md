@@ -37,7 +37,8 @@ Getting started with Symfony4
   
     ./setup.sh
 
-6. Add the .env file into the project
+6. Configure the .env file in the specific symfony project in the project folder 
+   
 
 7. Add email-config into the .env (projekt-name/.env)
    (for sending emails from the form)  
