@@ -1,9 +1,21 @@
 #!/bin/bash
 
-echo "vagrantbox ------ > install bootstrap and jquery via npm:"
+cd /home/vagrant/projekte/symfony4/public
 
-cd /home/vagrant/projekte/tutorials/symfony4/basics/public
+echo "installing bootstrap and jquery via npm:"
+
 npm install bootstrap
 npm install jquery
 
-echo "vagrantbox ------ > DONE"
+echo "DONE"
+
+echo "creating tables"
+
+php bin/console make:migration
+php bin/console doctrine:migrations:migrate
+
+echo "DONE"
+
+echo "restore db-dump"
+mysql -uhomestead -psecret symfony_tutorial < ../mysql_backup/symfony_tutorial-201812211410.sql 
+echo "DONE"

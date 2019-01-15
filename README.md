@@ -42,11 +42,23 @@ Getting started with Symfony4
 
 7. Add email-config into the .env (projekt-name/.env)
    (for sending emails from the form)  
-   
- 
-#### information ####
 
-8. Have a break in the development:
+#### using the box:
+
+1. Mainpage: <http://symfony-tutorial.test>
+
+2. Login in the Admin-Section <http://symfony-tutorial.test/login> 
+- username: root (alle Rechte)
+- passwort: 0000
+
+- username: admin
+- passwort: 1111
+
+
+
+#### information 
+
+1. Have a break in the development:
   
     //root of homestead:  
     
@@ -59,7 +71,7 @@ Getting started with Symfony4
     
     
     
-9. After destroying vagrant box:  
+2. After destroying vagrant box:  
   
   //remove entries from the /etc/hosts file!  
   homestead.info

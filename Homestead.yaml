@@ -12,17 +12,14 @@ keys:
 
 #mapping von lokal: home/beer/code auf vagrant 
 folders:
-#    - map: ./projekte               #localmachine  
+#    - map: ./projekte              #localmachine  
 #      to: /home/vagrant/projekte        #vagrantbox (via vagrant ssh) : /vagrant/
 
-    - map: ./projekte/homestead             #localmachine  
-      to: /home/vagrant/projekte/homestead       #vagrantbox
+    - map: ./projekte/homestead
+      to: /home/vagrant/projekte/homestead
 
-    - map: ./projekte/tutorials/symfony4            
-      to: /home/vagrant/projekte/tutorials/symfony4        
-
-    - map: ./projekte/tutorials/angular             
-      to: /home/vagrant/projekte/tutorials/angular       
+    - map: ./projekte/symfony4
+      to: /home/vagrant/projekte/symfony4
 
 #mapping von lokal homestead.test auf vagrant /home/vagrant/code/public... (siehe lokal etc/hosts)
 sites:
@@ -31,17 +28,12 @@ sites:
       to:  /home/vagrant/projekte/homestead/public
 
     - map: symfony-tutorial.test
-      to:  /home/vagrant/projekte/tutorials/symfony4/basics/public
+      to:  /home/vagrant/projekte/symfony4/public
       type: symfony4
-
-    - map: angular-tutorial.test
-      to:  /home/vagrant/projekte/tutorials/angular/public
 
 #the custom database will only take affekt when the vagrant-homestead box is fully destroyed and rebuild
 databases:
-    - homestead
     - symfony_tutorial
-
 
 #    Once configured, Homestead will export your databases to mysql_backup and  postgres_backup directories when the vagrant destroy command is executed. These directories can be found in the folder where you cloned Homestead or in the root of your project if you are using the per project installation method.
 backup: true
